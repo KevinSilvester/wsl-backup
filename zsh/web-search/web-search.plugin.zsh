@@ -18,7 +18,7 @@ function web_search() {
     # build search url:
     # join arguments passed with '+', then append to search engine URL
 
-    if [[ $1 == *anilist* || $1 == *mangadex ]]; then
+    if [[ $1 == *anilist* ]]; then
        url="${urls[$1]}${(j:%20:)@[2,-1]}"
     else 
        url="${urls[$1]}${(j:+:)@[2,-1]}"

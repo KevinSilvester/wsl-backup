@@ -68,7 +68,7 @@ ZSH_WEB_SEARCH_ENGINES=(
    @9anime      "https://9anime.to/search?keyword="
    @anilist-a   "https://anilist.co/search/manga?search="
    @anilist-m   "https://anilist.co/search/manga?search="
-   @mangadex    "https://mangadex.org/titles/?page=1&q="
+   @mangadex    "https://mangadex.org/titles/?q="
    @mal         "https://myanimelist.net/search/all?q="
 )
 
