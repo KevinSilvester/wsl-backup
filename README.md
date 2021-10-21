@@ -1,10 +1,10 @@
 # WSL Backup
 
-## Create .__root__ folder
+## Create '.\_\_root\_\_' folder
 ```zsh
 cd ~
 
-# if that doesn't work find the username with 'whoami' or echo "$USER"
+# if that doesn't work find the username with 'whoami' or 'echo "$USER"'
 
 git clone https://github.com/KevinSilvester/wsl-backup.git .__root__
 cd .__root__
