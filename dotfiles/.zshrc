@@ -6,7 +6,6 @@ plugins=(
    git
    dotenv
    last-working-dir
-   web-search
    extract
    history
    yarn
@@ -61,12 +60,15 @@ custom_commands=(
 # Custom search engine for web-search plugin
 # source: - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 ZSH_WEB_SEARCH_ENGINES=(
+   @google      "https://www.google.com/search?q="
+   @duckduckgo  "https://www.duckduckgo.com/?q="
+   @github      "https://github.com/search?q="
    @youtube     "https://www.youtube.com/results?search_query="
    @yugen       "https://yugen.to/search/?q="
    @9anime      "https://9anime.to/search?keyword="
    @anilist-a   "https://anilist.co/search/manga?search="
    @anilist-m   "https://anilist.co/search/manga?search="
-   @mangadex    "https://mangadex.org/titles/#"
+   @mangadex    "https://mangadex.org/titles/?page=1&q="
    @mal         "https://myanimelist.net/search/all?q="
 )
 
@@ -134,6 +136,7 @@ function print_cwc() {
 
 
 source $ZSH/oh-my-zsh.sh
+source /home/wsl1/.__root__/zsh/web-search/web-search.plugin.zsh
 source /home/wsl1/.__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/wsl1/.__root__/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
