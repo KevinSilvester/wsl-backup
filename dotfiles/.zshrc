@@ -37,7 +37,7 @@ alias @print-cmd="print_cc"
 alias @print-w-cmd="print_cwc"
 alias @explore="explorer.exe"
 alias @notepad="Notepad.exe"
-alias @dundalk="cd ~home/OneDrive - Dundalk Institute of Technology"
+alias @dundalk="cd ~win-home/'OneDrive - Dundalk Institute of Technology'"
 alias @vite-init="pnpm create vite"
 
 typeset -A custom_commands
@@ -50,7 +50,7 @@ custom_commands=(
    @print-w-cmd "print_search_commands"
    @explore    "\texplorer.exe"
    @notepad    "\tNotepad.exe"
-   @dundalk    "\tcd ~win-home/OneDrive - Dundalk Institute of Technology"
+   @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
    @vite-init  "pnpm create vite"
 )
 
