@@ -5,10 +5,9 @@
 cd ~
 
 # if that doesn't work find the username with 'whoami' or 'echo "$USER"'
+# then clone repo into folder renamed .__root__
 
 git clone https://github.com/KevinSilvester/wsl-backup.git .__root__
-cd .__root__
-mkdir zsh
 ```
 ******************************************************************************************************************
 
