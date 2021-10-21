@@ -27,19 +27,15 @@ function print_commands() {
    # List of all command results and resutls
    typeset -A custom_commands
    custom_commands=(
-      @theme2     "code ~/.oh-my-zsh/themes/theme2.zsh-theme"
-      @passion    "code ~/.oh-my-zsh/themes/passion.zsh-theme"
-      @rr         "code ~/.oh-my-zsh/themes/robbyrussell.zsh-theme"
-      @z-config   "code ~/.zshrc"
-      @b-config   "code ~/.bashrc"
-      @zsh        "cd ~zsh"
-      @home       "cd ~home"
-      @C          "cd ~C"
+      @ROOT       "\tcd ~/.__root__"
+      @zsh        "\tcd ~/.oh-my-zsh"
+      @win-home   "\tcd ~win-home"
+      @C          "\tcd ~C"
       @print-commands "print_commands"
       @print-s-commands "print_search_commands"
-      @explore    "explorer.exe"
-      @notepad    "Notepad.exe"
-      @dundalk    "cd ~home/OneDrive - Dundalk Institute of Technology"
+      @explore    "\texplorer.exe"
+      @notepad    "\tNotepad.exe"
+      @dundalk    "\tcd ~win-home/OneDrive - Dundalk Institute of Technology"
       @vite-init  "pnpm create vite"
    )
    local color1="$fg_bold[red]";
@@ -56,15 +52,12 @@ function print_commands() {
 
 # Custom file paths
 hash -d C=/mnt/c
-hash -d home=/mnt/c/Users/kevin
-hash -d zsh=/home/wsl1/.oh-my-zsh
+hash -d win-home=/mnt/c/Users/kevin
 
 # Custom commands
-alias @smushed="code ~/.__root__/zsh/smushed.zsh-theme"
-alias @z-config="code ~/.zshrc"
-alias @b-config="code ~/.bashrc"
-alias @zsh="cd ~zsh"
-alias @home="cd ~home"
+alias @ROOT="cd ~/.__root__"
+alias @zsh="cd ~/.oh-my-zsh"
+alias @win-home="cd ~win-home"
 alias @C="cd ~C"
 alias @print-commands="print_commands"
 alias @print-s-commands="print_search_commands"
@@ -100,7 +93,7 @@ function print_search_commands() {
       @google "\tSearch on Google"
       @youtube "\tSearch on YouTube"
       @yugen "\tSearch on Yugenani"
-      @yugen-l "View latest updates on Yugenani"
+      @yugen-l "\tView latest updates on Yugenani"
       @9anime "\tSearch on 9anime"
       @9anime-l "\tView latest updates on 9anime"
       @anilist-a "Search Anime on Anilist"
