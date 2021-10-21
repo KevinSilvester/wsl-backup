@@ -1,0 +1,8 @@
+[user]
+	email = kevinsilvester05@gmail.com
+	name = Kevin Silvester
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	editor = code --wait
