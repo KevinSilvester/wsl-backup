@@ -2,8 +2,6 @@ export ZSH="/home/wsl1/.oh-my-zsh"
 
 ZSH_THEME="smushed"
 
-#  Set a default file path to open to with cd
-
 plugins=(
    git
    dotenv
@@ -19,6 +17,23 @@ plugins=(
    zsh_reload
 )
 
+
+# Custom file paths
+hash -d C=/mnt/c
+hash -d win-home=/mnt/c/Users/kevin
+
+
+# Custom commands
+alias @ROOT="cd ~/.__root__"
+alias @zsh="cd ~/.oh-my-zsh"
+alias @win-home="cd ~win-home"
+alias @C="cd ~C"
+alias @print-commands="print_commands"
+alias @print-s-commands="print_search_commands"
+alias @explore="explorer.exe"
+alias @notepad="Notepad.exe"
+alias @dundalk="cd ~home/OneDrive - Dundalk Institute of Technology"
+alias @vite-init="pnpm create vite"
 
 # Function to print all custom commands
 # sources: - https://blog.mimacom.com/arrays-on-linux-shell/
@@ -49,22 +64,6 @@ function print_commands() {
       echo "${tab}${color1}${key}${reset}${color2}:${reset}${tab2}${color3}${val}${reset}"
    done
 }
-
-# Custom file paths
-hash -d C=/mnt/c
-hash -d win-home=/mnt/c/Users/kevin
-
-# Custom commands
-alias @ROOT="cd ~/.__root__"
-alias @zsh="cd ~/.oh-my-zsh"
-alias @win-home="cd ~win-home"
-alias @C="cd ~C"
-alias @print-commands="print_commands"
-alias @print-s-commands="print_search_commands"
-alias @explore="explorer.exe"
-alias @notepad="Notepad.exe"
-alias @dundalk="cd ~home/OneDrive - Dundalk Institute of Technology"
-alias @vite-init="pnpm create vite"
 
 
 # Custom search engine for web-search plugin
@@ -115,6 +114,7 @@ function print_search_commands() {
       echo "${tab}${color1}${key}${reset}${color2}:${reset}${tab2}${color3}${val}${reset}"
    done
 }
+
 
 source $ZSH/oh-my-zsh.sh
 source /home/wsl1/.__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
