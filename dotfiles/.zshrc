@@ -40,6 +40,7 @@ alias @notepad="Notepad.exe"
 alias @dundalk="cd ~win-home/'OneDrive - Dundalk Institute of Technology'"
 alias @vite-init="pnpm create vite"
 alias @cra="pnpx create-react-app"
+alias @compile="src"
 
 typeset -A custom_commands
 custom_commands=(
@@ -53,6 +54,8 @@ custom_commands=(
    @notepad    "\tNotepad.exe"
    @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
    @vite-init  "pnpm create vite"
+   @cra        "pnpx create-react-app"
+   @compile    "src"
 )
 
 
