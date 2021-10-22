@@ -1,4 +1,4 @@
-export ZSH="/home/wsl1/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="smushed"
 
@@ -21,7 +21,7 @@ plugins=(
 
 
 # Custom file paths
-hash -d C=/mnt/c
+hash -d c=/mnt/c
 hash -d win-home=/mnt/c/Users/kevin
 
 
@@ -29,20 +29,21 @@ hash -d win-home=/mnt/c/Users/kevin
 
 
 # Custom commands
-alias @ROOT="cd ~/.__root__"
-alias @zsh="cd ~/.oh-my-zsh"
+alias @root="cd ~/__root__"
+alias @zsh="cd $ZSH"
 alias @win-home="cd ~win-home"
-alias @C="cd ~C"
+alias @c="cd ~c"
 alias @print-cmd="print_cc"
 alias @print-w-cmd="print_cwc"
 alias @explore="explorer.exe"
 alias @notepad="Notepad.exe"
 alias @dundalk="cd ~win-home/'OneDrive - Dundalk Institute of Technology'"
 alias @vite-init="pnpm create vite"
+alias @cra="pnpx create-react-app"
 
 typeset -A custom_commands
 custom_commands=(
-   @ROOT       "\tcd ~/.__root__"
+   @root       "\tcd ~/__root__"
    @zsh        "\tcd ~/.oh-my-zsh"
    @win-home   "\tcd ~win-home"
    @C          "\tcd ~C"
@@ -103,7 +104,6 @@ custom_web_commands=(
 
 
 # Function to print all custom commands
-# Iteration with Array index does not work ZSH as index array start with
 # sources: - https://blog.mimacom.com/arrays-on-linux-shell/
 #          - https://zsh.sourceforge.io/Intro/intro_4.html
 #          - https://superuser.com/questions/737350/iterating-over-keys-or-k-v-pairs-in-zsh-associative-array
@@ -137,7 +137,7 @@ function print_cwc() {
 
 
 source $ZSH/oh-my-zsh.sh
-source /home/wsl1/.__root__/zsh/web-search/web-search.plugin.zsh
-source /home/wsl1/.__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/wsl1/.__root__/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/__root__/zsh/web-search/web-search.plugin.zsh
+source $HOME/__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/__root__/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
