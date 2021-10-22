@@ -55,7 +55,7 @@ custom_commands=(
    @notepad    "\tNotepad.exe"
    @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
    @vite-init  "pnpm create vite"
-   @cra        "pnpx create-react-app"
+   @cra        "pnpm dlx create-react-app"
    @compile    "src"
    @year-2     "cd ~/year-2"
 )
