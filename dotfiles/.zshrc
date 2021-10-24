@@ -50,7 +50,7 @@ custom_commands=(
    @win-home   "\tcd ~win-home"
    @C          "\tcd ~C"
    @print-cmd "print_commands"
-   @print-w-cmd "print_search_commands"
+   @print-wcmd "print_search_commands"
    @explore    "\texplorer.exe"
    @notepad    "\tNotepad.exe"
    @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
@@ -84,12 +84,14 @@ alias @9anime-l="open_command https://9anime.to/updated"
 alias @yugen-l="open_command https://yugen.to/latest/"
 alias @mangadex-l="open_command https://mangadex.org/titles/feed"
 alias @mal-s="open_command https://myanimelist.net/anime/season/schedule"
-alias @shir="open_command https://shiro.is/home"
+alias @shiro="open_command https://shiro.is/home"
 
 
 typeset -A custom_web_commands
 custom_web_commands=(
    @google "\tSearch on Google"
+   @duckduckgo "\tSearch on DuckDuckGo"
+   @github "\tSearch on GitHub"
    @youtube "\tSearch on YouTube"
    @yugen "\tSearch on Yugenani"
    @yugen-l "\tView latest updates on Yugenani"
