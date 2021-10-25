@@ -42,6 +42,7 @@ alias @vite-init="pnpm create vite"
 alias @cra="pnpx create-react-app"
 alias @compile="src"
 alias @year-2="cd ~/year-2"
+alias @edit-root="code ~/__root__"
 
 typeset -A custom_commands
 custom_commands=(
@@ -58,6 +59,7 @@ custom_commands=(
    @cra        "pnpm dlx create-react-app"
    @compile    "src"
    @year-2     "cd ~/year-2"
+   @edit-root  "code ~/__root__"
 )
 
 
