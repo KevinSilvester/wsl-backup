@@ -13,7 +13,7 @@ plugins=(
    node
    npm
    nvm
-   zsh_reload
+   python
 )
 
 
@@ -39,10 +39,11 @@ alias @explore="explorer.exe"
 alias @notepad="Notepad.exe"
 alias @dundalk="cd ~win-home/'OneDrive - Dundalk Institute of Technology'"
 alias @vite-init="pnpm create vite"
-alias @cra="pnpx create-react-app"
-alias @compile="src"
+alias @cra="pnpm dlx create-react-app"
+alias @reload="omz reload"
 alias @year-2="cd ~/year-2"
 alias @edit-root="code ~/__root__"
+alias @update="omz update"
 
 typeset -A custom_commands
 custom_commands=(
@@ -50,16 +51,17 @@ custom_commands=(
    @zsh        "\tcd ~/.oh-my-zsh"
    @win-home   "\tcd ~win-home"
    @C          "\tcd ~C"
-   @print-cmd "print_commands"
+   @print-cmd  "print_commands"
    @print-wcmd "print_search_commands"
    @explore    "\texplorer.exe"
    @notepad    "\tNotepad.exe"
    @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
    @vite-init  "pnpm create vite"
-   @cra        "pnpm dlx create-react-app"
-   @compile    "src"
-   @year-2     "cd ~/year-2"
+   @cra        "\tpnpm dlx create-react-app"
+   @reload     "\tomz reload"
+   @year-2     "\tcd ~/year-2"
    @edit-root  "code ~/__root__"
+   @update     "\tomz update"
 )
 
 
@@ -147,6 +149,12 @@ function print_cwc() {
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/__root__/zsh/web-search/web-search.plugin.zsh
+source $HOME/__root__/zsh/k/k.plugin.zsh
 source $HOME/__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/__root__/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"

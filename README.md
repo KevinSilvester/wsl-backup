@@ -23,6 +23,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 
 ******************************************************************************************************************
 
+### ZSH k
+```zsh
+cd $HOME/__root__/zsh
+git clone https://github.com/supercrabtree/k.git
+```
+
+******************************************************************************************************************
+
 ### ZSH Custom Theme
 ###### Based on default Robby Russel theme and Passion theme <https://github.com/ChesterYue/ohmyzsh-theme-passion>
 ```zsh
@@ -30,6 +38,16 @@ ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushe
 ```
 
 ******************************************************************************************************************
+
+
+### FZF
+```zsh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+******************************************************************************************************************
+
 
 ### Dotfiles
 ```zsh
