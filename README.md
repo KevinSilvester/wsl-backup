@@ -3,7 +3,7 @@
 ## **Content**
 - [Essentials](#essentials)
 - [ZSH](#zsh)
-- [mlocate](#molcate)
+- [mlocate](#mlocate)
 - [NodeJS](#nodejs)
 - [Rust and Python](#rust-and-python)
 - [Dotfiles](#dotfiles)
