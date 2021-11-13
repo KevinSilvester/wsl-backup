@@ -29,12 +29,13 @@ hash -d win-home=/mnt/c/Users/kevin
 
 
 # Custom commands
+alias @update="sudo bash -c \"apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y clean\""
 alias @root="cd ~/__root__"
 alias @zsh="cd $ZSH"
 alias @win-home="cd ~win-home"
 alias @c="cd ~c"
 alias @print-cmd="print_cc"
-alias @print-w-cmd="print_cwc"
+alias @print-wcmd="print_cwc"
 alias @explore="explorer.exe"
 alias @notepad="Notepad.exe"
 alias @dundalk="cd ~win-home/'OneDrive - Dundalk Institute of Technology'"
@@ -43,25 +44,32 @@ alias @cra="pnpm dlx create-react-app"
 alias @reload="omz reload"
 alias @year-2="cd ~/year-2"
 alias @edit-root="code ~/__root__"
-alias @update="omz update"
+alias @z-update="omz update"
+alias @img="termimage"
+alias @dist="ncdu"
+alias @train="sl"
 
 typeset -A custom_commands
 custom_commands=(
+   @update     "\tsudo bash -c \"apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y clean\""
    @root       "\tcd ~/__root__"
    @zsh        "\tcd ~/.oh-my-zsh"
    @win-home   "\tcd ~win-home"
-   @C          "\tcd ~C"
-   @print-cmd  "print_commands"
-   @print-wcmd "print_search_commands"
+   @c          "\t\tcd ~c"
+   @print-cmd  "\tprint_commands"
+   @print-wcmd "\tprint_search_commands"
    @explore    "\texplorer.exe"
    @notepad    "\tNotepad.exe"
    @dundalk    "\tcd ~win-home/'OneDrive - Dundalk Institute of Technology'"
-   @vite-init  "pnpm create vite"
+   @vite-init  "\tpnpm create vite"
    @cra        "\tpnpm dlx create-react-app"
    @reload     "\tomz reload"
    @year-2     "\tcd ~/year-2"
-   @edit-root  "code ~/__root__"
-   @update     "\tomz update"
+   @edit-root  "\tcode ~/__root__"
+   @z-update   "\tomz update"
+   @img        "\ttermimage"
+   @disk       "\tncdu"
+   @train      "\tsl"
 )
 
 
@@ -79,14 +87,14 @@ ZSH_WEB_SEARCH_ENGINES=(
    @9anime      "https://9anime.to/search?keyword="
    @anilist-a   "https://anilist.co/search/manga?search="
    @anilist-m   "https://anilist.co/search/manga?search="
-   @mangadex    "https://mangadex.org/titles/?q="
+   @mdex        "https://mangadex.org/titles/?q="
    @mal         "https://myanimelist.net/search/all?q="
 )
 
 # Custom web commands
 alias @9anime-l="open_command https://9anime.to/updated"
 alias @yugen-l="open_command https://yugen.to/latest/"
-alias @mangadex-l="open_command https://mangadex.org/titles/feed"
+alias @mdex-l="open_command https://mangadex.org/titles/feed"
 alias @mal-s="open_command https://myanimelist.net/anime/season/schedule"
 alias @shiro="open_command https://shiro.is/home"
 
@@ -97,14 +105,14 @@ custom_web_commands=(
    @duckduckgo "\tSearch on DuckDuckGo"
    @github "\tSearch on GitHub"
    @youtube "\tSearch on YouTube"
-   @yugen "\tSearch on Yugenani"
+   @yugen "\t  Search on Yugenani"
    @yugen-l "\tView latest updates on Yugenani"
    @9anime "\tSearch on 9anime"
    @9anime-l "\tView latest updates on 9anime"
-   @anilist-a "Search Anime on Anilist"
-   @anilist-m "Search Manga on Anilist"
-   @mangadex "\tSearch on Mangadex"
-   @mangadex-l "View followed manga updates"
+   @anilist-a "\tSearch Anime on Anilist"
+   @anilist-m "\tSearch Manga on Anilist"
+   @mdex "\tSearch on Mangadex"
+   @mdex-l "\tView followed manga updates"
    @mal "\tSearch on MyAnimeList"
    @mal-s "\tView release schedule"
    @shiro "\tView anime on Shiro.is"
@@ -154,7 +162,12 @@ source $HOME/__root__/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/__root__/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
