@@ -54,6 +54,12 @@ cd $HOME/__root__/zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
 
+#### **[k](https://github.com/supercrabtree/k)**
+```zsh
+cd $HOME/__root__/zsh
+git clone https://github.com/supercrabtree/k.git
+```
+
 #### **ZSH Custom Theme**
 ```zsh
 ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushed.zsh-theme
@@ -124,12 +130,6 @@ ln -s $HOME/__root__/dotfiles/.nanorc $HOME/.nanorc
 ```zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-```
-
-### **[k](https://github.com/supercrabtree/k)**
-```zsh
-cd $HOME/__root__/zsh
-git clone https://github.com/supercrabtree/k.git
 ```
 
 #### **[Ranger](https://github.com/ranger/ranger)**
