@@ -127,35 +127,60 @@ git_helper() {
    touch .gitignore
    if [[ $# -gt 0 ]]; then
       for arg in "$@"; do
+         [[ $arg = -* ]] || echo "$arg" >> .gitignore;
          case $arg in
+            -r)
+               rm .gitignore
+               ;;
+            -ra)
+               rm -rf .git .gitignore
+               ;;
             -m)
-               echo "client/node_modules"    >> .gitignore;
-               echo "client/yarn.lock"       >> .gitignore;
-               echo "client/pnpm-lock.yaml"  >> .gitignore;
+               echo "**/node_modules"        >> .gitignore;
+               echo "*/yarn.lock"            >> .gitignore;
+               echo "*/build"                >> .gitignore;
+               echo "*/dist*"                >> .gitignore;
+               echo "*/pnpm-lock.yaml"       >> .gitignore;
                echo "client/.pnp"            >> .gitignore;
                echo "client/.pnp.js"         >> .gitignore;
                echo "client/coverage"        >> .gitignore;
-               echo "client/build"           >> .gitignore;
                echo "client/.DS_Store"       >> .gitignore;
                echo "client/.env.local"      >> .gitignore;
                echo "client/.env*"           >> .gitignore;
                echo "client/npm-debug.log*"  >> .gitignore;
                echo "client/yarn-debug.log*" >> .gitignore;
                echo "client/yarn-error.log*" >> .gitignore;
-               echo "server/node_modules"    >> .gitignore;
                echo "server/pnpm-lock.yaml"  >> .gitignore;
+               echo "server/dist*"           >> .gitignore;
                ;;
-            -r:*)
+            -w)
+               echo "node_modules"     >> .gitignore;
+               echo "yarn.lock"        >> .gitignore;
+               echo "pnpm-lock.yaml"   >> .gitignore;
+               echo ".pnp"             >> .gitignore;
+               echo ".pnp.js"          >> .gitignore;
+               echo "coverage"         >> .gitignore;
+               echo "build"            >> .gitignore;
+               echo "dist*"            >> .gitignore;
+               echo ".DS_Store"        >> .gitignore;
+               echo ".env.local"       >> .gitignore;
+               echo ".env*"            >> .gitignore;
+               echo "npm-debug.log*"   >> .gitignore;
+               echo "yarn-debug.log*"  >> .gitignore;
+               echo "yarn-error.log*"  >> .gitignore;
+               ;;
+            -i*)
                git init;
-               git add .;
+               git add \.;
                git commit -m "first commit";
                git branch -M main;
-               git remote add origin $(echo $arg | cut -b 4-);
+               [ ${#arg} -gt 2 ] && git remote add origin $(echo $arg | cut -b 4-);
                ;;
-            *)
-               for line in "$@"; do
-                  echo "$line" >> .gitignore;
-               done
+            -p*)
+               # echo $(echo $arg | cut -b 4-);
+               git add \.;
+               git commit -m "$(echo $arg | cut -b 4-)";
+               git push -u origin main;
                ;;
          esac
       done
