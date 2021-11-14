@@ -25,9 +25,7 @@ function web_search() {
     fi
     
   else
-    # build main page url:
-    # split by '/', then rejoin protocol (1) and domain (2) parts with '//'
-    url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
+    url="${urls[$1]}"
   fi
 
   open_command "$url"
@@ -39,7 +37,6 @@ if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
   typeset -A engines
   engines=($ZSH_WEB_SEARCH_ENGINES)
   for key in ${(k)engines}; do
-    #echo "${ZSH_WEB_SEARCH_ENGINES}"
     alias "$key"="web_search $key"
   done
   unset engines key

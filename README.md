@@ -64,7 +64,15 @@ git clone https://github.com/supercrabtree/k.git
 ```zsh
 ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushed.zsh-theme
 ```
->#### Based on default Robby Russel theme and Passion theme <https://github.com/ChesterYue/ohmyzsh-theme-passion>
+> Based on default Robby Russel theme and Passion theme <https://github.com/ChesterYue/ohmyzsh-theme-passion>
+
+#### **ZSH Custom Plugins**
+```zsh
+ln -s $HOME/__root__/zsh/k $HOME/.oh-my-zsh/custom/plugins/k
+ln -s $HOME/__root__/zsh/custom-search $HOME/.oh-my-zsh/custom/plugins/custom-search
+ln -s $HOME/__root__/zsh/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+ln -s $HOME/__root__/zsh/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
 
 ******************************************************************************************************************
 

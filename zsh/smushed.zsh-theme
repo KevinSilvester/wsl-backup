@@ -1,21 +1,5 @@
-
-# gdate for macOS
-# REF: https://apple.stackexchange.com/questions/135742/time-in-milliseconds-since-epoch-in-the-terminal
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    {
-        gdate
-    } || {
-        echo "\n$fg_bold[yellow]passsion.zsh-theme depends on cmd [gdate] to get current time in milliseconds$reset_color"
-        echo "$fg_bold[yellow][gdate] is not installed by default in macOS$reset_color"
-        echo "$fg_bold[yellow]to get [gdate] by running:$reset_color"
-        echo "$fg_bold[green]brew install coreutils;$reset_color";
-        echo "$fg_bold[yellow]\nREF: https://github.com/ChesterYue/ohmyzsh-theme-passion#macos\n$reset_color"
-    }
-fi
-
-
 # time
-function real_time() {
+real_time() {
     local color="%{$fg_no_bold[cyan]%}";                    # color in PROMPT need format in %{XXX%} which is not same with echo
     local time="[$(date +%H:%M:%S)]";
     local color_reset="%{$reset_color%}";
@@ -52,8 +36,8 @@ function login_info() {
 function directory() {
     local color="%{$fg[cyan]%}";
     local color2="%{$fg_bold[magenta]%}";
-    # REF: https://stackoverflow.com/questions/25944006/bash-current-working-directory-with-replacing-path-to-home-folder
-    local directory="${PWD/#$HOME/~}";
+    # replacing string values: https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
+    local directory=$(pwd | sed "s|^$HOME|~|" | sed "s|^$C|~c|");
     local color_reset="%{$reset_color%}";
     echo "${color2}dir::(${color_reset}${color}${directory}${color_reset}${color2})${color_reset}";
 }
@@ -62,8 +46,8 @@ function directory() {
 # git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git::(%{$fg_no_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg_bold[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[blue]%})"
 
 function update_git_status() {
     GIT_STATUS=$(git_prompt_info);
@@ -193,20 +177,6 @@ precmd() {
 
 # set option
 setopt PROMPT_SUBST;
-
-
-# timer
-#REF: https://stackoverflow.com/questions/26526175/zsh-menu-completion-causes-problems-after-zle-reset-prompt
-TMOUT=1;
-TRAPALRM() {
-    # $(git_prompt_info) cost too much time which will raise stutters when inputting. so we need to disable it in this occurence.
-    # if [ "$WIDGET" != "expand-or-complete" ] && [ "$WIDGET" != "self-insert" ] && [ "$WIDGET" != "backward-delete-char" ]; then
-    # black list will not enum it completely. even some pipe broken will appear.
-    # so we just put a white list here.
-    if [ "$WIDGET" = "" ] || [ "$WIDGET" = "accept-line" ] ; then
-        zle reset-prompt;
-    fi
-}
 
 
 # prompt
