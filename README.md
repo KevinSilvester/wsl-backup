@@ -69,6 +69,8 @@ ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushe
 #### **ZSH Custom Plugins**
 ```zsh
 ln -s $HOME/__root__/zsh/k $HOME/.oh-my-zsh/custom/plugins/k
+ln -s $HOME/__root__/zsh/printer $HOME/.oh-my-zsh/custom/plugins/printer
+ln -s $HOME/__root__/zsh/git-helper $HOME/.oh-my-zsh/custom/plugins/git-helper
 ln -s $HOME/__root__/zsh/custom-search $HOME/.oh-my-zsh/custom/plugins/custom-search
 ln -s $HOME/__root__/zsh/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ln -s $HOME/__root__/zsh/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
