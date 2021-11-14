@@ -129,10 +129,10 @@ git_helper() {
       for arg in "$@"; do
          [[ $arg = -* ]] || echo "$arg" >> .gitignore;
          case $arg in
-            -r)
+            --r)
                rm .gitignore
                ;;
-            -ra)
+            --ra)
                rm -rf .git .gitignore
                ;;
             -m)
