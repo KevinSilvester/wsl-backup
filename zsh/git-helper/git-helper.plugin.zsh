@@ -1,17 +1,36 @@
 # Helper function to make using git easier
 # Usage:
-#  --r         to remove git ignore file
-#  --ra        to remove git folder and git ignore file
-#  -m          to create gitignore file for mern app
-#  -w          to create gitignore file for gereral web apps
-#  -i          initialise git repo without linking to remote repo
-#  -i:<arg>    initialise git repo, add link to remote repo after ':'
-#  -ip:<arg>   initialise git repo, add link to remote repo after ':', and push to remote
-#  -p:<arg>    add, commit and push to repo. enter commit message as argument.
-#  -pd         add, commit and push to repo. No 'arg' means commit message will be date
-#  -pd:<arg>   add, commit and push to repo. Commit message will be message date and string in 'arg'
+#  --r         To remove .gitignore file.
+#  --ra        To remove .git folder and .gitignore file.
+#  -m          To create .gitignore file for mern app.
+#  -w          To create .gitignore file for gereral web apps.
+#  -i          Initialise git repo without linking to remote repo.
+#  -i:<arg>    Initialise git repo, add link to remote repo after ':'.
+#  -ip:<arg>   Initialise git repo, add link to remote repo after ':', and push to remote.
+#  -p:<arg>    Add, commit and push to repo. enter commit message as argument.
+#  -pd         Add, commit and push to repo. No 'arg' means commit message will be date
+#  -pd:<arg>   Add, commit and push to repo. Commit message will be message date and string in 'arg'
+#  no Flags    Added the arg to .gitignore file.
 git_helper() {
-   touch .gitignore
+   if [[ $1 = --help ]]; then
+      cat <<'EOF'
+   Usage:
+      --r         To remove .gitignore file.
+      --ra        To remove .git folder and .gitignore file.
+      -m          To create .gitignore file for mern app.
+      -w          To create .gitignore file for gereral web apps.
+      -i          Initialise git repo without linking to remote repo.
+      -i:<arg>    Initialise git repo, add link to remote repo after ':'.
+      -ip:<arg>   Initialise git repo, add link to remote repo after ':', and push to remote.
+      -p:<arg>    Add, commit and push to repo. enter commit message as argument.
+      -pd         Add, commit and push to repo. No 'arg' means commit message will be date
+      -pd:<arg>   Add, commit and push to repo. Commit message will be message date and string in 'arg'
+      No Flags    Added the arg to .gitignore file.
+EOF
+      return 0;
+   else
+      touch .gitignore;
+   fi
    if [[ $# -gt 0 ]]; then
       for arg in "$@"; do
          [[ $arg = -* ]] || echo "$arg" >> \.gitignore;
