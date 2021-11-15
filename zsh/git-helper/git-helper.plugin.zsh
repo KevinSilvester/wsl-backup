@@ -1,10 +1,15 @@
-## Usage:
+# Helper function to make using git easier
+# Usage:
 #  --r         to remove git ignore file
 #  --ra        to remove git folder and git ignore file
 #  -m          to create gitignore file for mern app
 #  -w          to create gitignore file for gereral web apps
-#  -i(:<arg>)  initialise git repo, add link to remote repo after ':'
-#  -p:<arg>    add, commit and push to repo. enter commit message as argument. eg. git_helper -p:"this is a commit message"
+#  -i          initialise git repo without linking to remote repo
+#  -i:<arg>    initialise git repo, add link to remote repo after ':'
+#  -ip:<arg>   initialise git repo, add link to remote repo after ':', and push to remote
+#  -p:<arg>    add, commit and push to repo. enter commit message as argument.
+#  -pd         add, commit and push to repo. No 'arg' means commit message will be date
+#  -pd:<arg>   add, commit and push to repo. Commit message will be message date and string in 'arg'
 git_helper() {
    touch .gitignore
    if [[ $# -gt 0 ]]; then
@@ -33,7 +38,6 @@ git_helper() {
                echo "client/yarn-debug.log*" >> \.gitignore;
                echo "client/yarn-error.log*" >> \.gitignore;
                echo "server/pnpm-lock.yaml"  >> \.gitignore;
-               echo "server/dist*"           >> \.gitignore;
                ;;
             -w)
                echo "node_modules"     >> \.gitignore;
@@ -56,11 +60,18 @@ git_helper() {
                git add \.;
                git commit -m "first commit";
                git branch -M main;
-               [ ${#arg} -gt 2 ] && git remote add origin $(echo $arg | cut -b 4-);
+               [ ${#arg} -gt 2 ] && case $arg in
+                     -ip*) git remote add origin $(echo $arg | cut -b 5-); git push -u origin main; ;;
+                     *)    git remote add origin $(echo $arg | cut -b 4-) ;;
+                  esac
                ;;
             -p*)
                git add \.;
-               git commit -m "$(echo $arg | cut -b 4-)";
+               case $arg in
+                  -pd:*)   git commit -m "$(echo $(date +%d-%m-%Y)) $(echo $arg | cut -b 5-)"; ;;
+                  -pd)     git commit -m "$(echo $(date +%d-%m-%Y))"; ;;
+                  *)       git commit -m  "$(echo $arg | cut -b 4-)"; ;;
+               esac
                git push -u origin main;
                ;;
          esac
