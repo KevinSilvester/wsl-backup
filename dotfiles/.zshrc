@@ -1,3 +1,14 @@
+
+export ZSH="$HOME/.oh-my-zsh"
+export C="/mnt/c"
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export FZF_DEFAULT_OPS="--extended"
+export NVM_DIR="$HOME/.nvm"
+
+
 ZSH_THEME="smushed"
 
 plugins=(
@@ -129,18 +140,9 @@ colours() {
 
 # ---------------------------------------------------------------------------------------------
 
-
-export ZSH="$HOME/.oh-my-zsh"
-export C="/mnt/c"
-export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPS="--extended"
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source $ZSH/oh-my-zsh.sh

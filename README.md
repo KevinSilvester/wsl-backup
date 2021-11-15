@@ -146,21 +146,17 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ```zsh
 sudo bash -c "apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y clean"
 
-<<'#RANGER'
-   ffmpeg: preview video thumbnail 
-   w3m: preview html pages
-   jq: preview json
-   highlight: syntax highlighting
-   mediainfo: info about media files
-#RANGER
+# ffmpeg: preview video thumbnail 
+# w3m: preview html pages
+# jq: preview json
+# highlight: syntax highlighting
+# mediainfo: info about media files
 sudo apt-get install ranger ffmpeg w3m jq highlight mediainfo
 
-<<'#IMG-PREVIEW'
-   ## RANGER IMAGE PREVIEW DOES NOT WORK IN WSL
-   # ueberzug: image preview utility for ranger
-   sudo apt install python3 libjpeg8-dev zlib1g-dev python-dev python3-dev libxtst-dev libx11-dev python3-distutil
-   pip3 install ueberzug
-#IMG-PREVIEW
+## RANGER IMAGE PREVIEW DOES NOT WORK IN WSL
+# ueberzug: image preview utility for ranger
+# sudo apt install python3 libjpeg8-dev zlib1g-dev python-dev python3-dev libxtst-dev libx11-dev python3-distutil
+# pip3 install ueberzug
 
 # file icons for ranger
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
