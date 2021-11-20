@@ -1,0 +1,62 @@
+format = '''
+[\[$directory\]](bold #bf8fff)$git_branch$git_status$cmd_duration$battery$memory_usage$nodejs$java$package
+$character
+'''
+
+right_format = '''$time'''
+
+add_newline = true
+[character]
+success_symbol = "[~>](bold #b0ffa1)"
+error_symbol = "[~>](bold #ff4a4a) "
+
+[directory]
+format = '[$path](bold 45)'
+truncation_length = 8
+truncation_symbol = "…/"
+truncate_to_repo = false
+### repo style causing space after directory name
+# repo_root_style = 'bold underline 39'
+read_only = ''
+read_only_style = 'bold 45'
+style	=  "bold 45"
+
+[directory.substitutions]
+"/mnt/c" = "~C"
+"OneDrive - Dundalk Institute of Technology" = '~DKIT'
+
+[battery]
+disabled = false
+
+[cmd_duration]
+format = ' [\[$duration\]](bold #a8f7d1)'
+min_time = 0
+
+[git_branch]
+format = ' [\[[$symbol$branch](bold #ff4a4a)\]](bold #00bbff)'
+style = 'bold #ff4a4a'
+
+[git_status]
+format = ' ([\[$all_status$ahead_behind\]]($style))'
+style = "bold yellow"
+
+[nodejs]
+format = " [$symbol($version )](bold #b0ffa1)"
+
+[java]
+format = " [${symbol}(${version})](bold #f78800)"
+symbol = " "
+
+[package]
+format = " [$symbol$version]($style)"
+symbol = " "
+
+[memory_usage]
+format = ' $symbol [${ram}( \| ${swap})]($style)'
+symbol = "🐏 "
+style	= "bold dimmed white"
+disabled = false
+
+[time]
+disabled = false
+format = '[$time](bold #ffaf87)'

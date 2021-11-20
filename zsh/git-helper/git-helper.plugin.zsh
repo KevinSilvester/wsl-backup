@@ -1,3 +1,4 @@
+#!/bin/env zsh
 # Helper function to make using git easier
 # Usage:
 #  --r         To remove .gitignore file.
@@ -11,7 +12,8 @@
 #  -pd         Add, commit and push to repo. No 'arg' means commit message will be date
 #  -pd:<arg>   Add, commit and push to repo. Commit message will be message date and string in 'arg'
 #  no Flags    Added the arg to .gitignore file.
-git_helper() {
+_git_helper() {
+
    if [[ $1 = --help ]]; then
       cat <<'EOF'
    Usage:
@@ -23,17 +25,18 @@ git_helper() {
       -i:<arg>    Initialise git repo, add link to remote repo after ':'.
       -ip:<arg>   Initialise git repo, add link to remote repo after ':', and push to remote.
       -p:<arg>    Add, commit and push to repo. enter commit message as argument.
-      -pd         Add, commit and push to repo. No 'arg' means commit message will be date
+      -p          Add, commit and push to repo. No 'arg' means commit message will be date
       -pd:<arg>   Add, commit and push to repo. Commit message will be message date and string in 'arg'
       No Flags    Added the arg to .gitignore file.
 EOF
-      return 0;
+      return 0
    else
-      touch .gitignore;
+      touch \.gitignore
    fi
+   
    if [[ $# -gt 0 ]]; then
       for arg in "$@"; do
-         [[ $arg = -* ]] || echo "$arg" >> \.gitignore;
+         [[ $arg != -* ]] && echo "$arg" >> \.gitignore
          case $arg in
             --r)
                rm \.gitignore
@@ -75,23 +78,25 @@ EOF
                echo "yarn-error.log*"  >> \.gitignore;
                ;;
             -i*)
-               git init;
-               git add \.;
-               git commit -m "first commit";
-               git branch -M main;
-               [ ${#arg} -gt 2 ] && case $arg in
-                     -ip*) git remote add origin $(echo $arg | cut -b 5-); git push -u origin main; ;;
+               git init
+               git add \.
+               git commit -m "first commit"
+               git branch -M main
+               if [ ${#arg} -gt 2 ]; then
+                  case $arg in
+                     -ip*) git remote add origin $(echo $arg | cut -b 5-); git push -u origin main ;;
                      *)    git remote add origin $(echo $arg | cut -b 4-) ;;
                   esac
+               fi
                ;;
-            -p*)
+            -a*) 
                git add \.;
                case $arg in
-                  -pd:*)   git commit -m "$(echo $(date +%d-%m-%Y)) $(echo $arg | cut -b 5-)"; ;;
-                  -pd)     git commit -m "$(echo $(date +%d-%m-%Y))"; ;;
-                  *)       git commit -m  "$(echo $arg | cut -b 4-)"; ;;
+                  -ad:*)   git commit -m "$(echo $(date +%d-%m-%Y)) $(echo $arg | cut -b 5-)" ;;
+                  -a)      git commit -m "$(echo $(date +%d-%m-%Y))" ;;
+                  *)       git commit -m  "$(echo $arg | cut -b 4-)" ;;
                esac
-               git push -u origin main;
+               [[ $arg = \-a*p* ]] && git push -u origin main
                ;;
          esac
       done

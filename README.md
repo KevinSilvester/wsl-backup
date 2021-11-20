@@ -129,6 +129,9 @@ rm .zshrc .gitconfig .bashrc .nanorc
 # replace with new config
 ln -s $HOME/__root__/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/__root__/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/__root__/dotfiles/.zshenv $HOME/.zshenv
+ln -s $HOME/__root__/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/__root__/dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/__root__/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/__root__/dotfiles/.nanorc $HOME/.nanorc
 ```
