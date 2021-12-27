@@ -6,107 +6,111 @@
 # ---------------------------------------------------------------------------------------------
 
 # Custom ls and exa colors
-typeset -a ls_c
-ls_c=(
-   'di=38;5;117'
-   'ln=38;5;122'
-   'ex=38;5;217'
-   '*.md=38;5;106'
-   'README.md=38;5;136'
-   '.*rc=38;5;183'
-   '*.zsh=38;5;183'
-   '*.fish=38;5;183'
-   '.*config=38;5;183'
-   '.zcomp*=38;5;183'
-   '.zsh*=38;5;183'
-   '.zprofile=38;5;183'
-   '.zshenv=38;5;183'
-   '*.bash=38;5;183'
-   '.bash_profile=38;5;183'
-   '.bash*=38;5;183'
-   '*.sh=38;5;183'
-   '*.zwc=38;5;183'
-   '*.tar=38;5;60'
-   '*.tgz=38;5;60'
-   '*.arc=38;5;60'
-   '*.arj=38;5;60'
-   '*.taz=38;5;60'
-   '*.lha=38;5;60'
-   '*.lz4=38;5;60'
-   '*.lzh=38;5;60'
-   '*.lzma=38;5;60'
-   '*.tlz=38;5;60'
-   '*.txz=38;5;60'
-   '*.tzo=38;5;60'
-   '*.t7z=38;5;60'
-   '*.zip=38;5;60'
-   '*.z=38;5;60'
-   '*.dz=38;5;60'
-   '*.gz=38;5;60'
-   '*.lrz=38;5;60'
-   '*.lz=38;5;60'
-   '*.lzo=38;5;60'
-   '*.xz=38;5;60'
-   '*.zst=38;5;60'
-   '*.tzst=38;5;60'
-   '*.bz2=38;5;60'
-   '*.bz=38;5;60'
-   '*.tbz=38;5;60'
-   '*.tbz2=38;5;60'
-   '*.tz=38;5;60'
-   '*.deb=38;5;60'
-   '*.rpm=38;5;60'
-   '*.jar=38;5;60'
-   '*.war=38;5;60'
-   '*.ear=38;5;60'
-   '*.sar=38;5;60'
-   '*.rar=38;5;60'
-   '*.alz=38;5;60'
-   '*.ace=38;5;60'
-   '*.zoo=38;5;60'
-   '*.cpio=38;5;60'
-   '*.7z=38;5;60'
-   '*.rz=38;5;60'
-   '*.cab=38;5;60'
-   '*.wim=38;5;60'
-   '*.swm=38;5;60'
-   '*.dwm=38;5;60'
-   '*.esd=38;5;60'
-   '*.vue=38;5;48'
-   '*.jsx=38;5;26'
-   '*.tsx=38;5;26'
-   '*.ts=38;5;45'
-   '*.js=38;5;220'
-   'package.json=38;5;193'
-   '*.json=38;5;220'
-   '*.css=38;5;39'
-   '*.less=38;5;39'
-   '*.scss=38;5;205'
-   '*.sass=38;5;205'
-   '*.woff=38;5;197'
-   '*.woff2=38;5;197'
-   '*.eot=38;5;197'
-   '*.ttf=38;5;197'
-   '*.otf=38;5;197'
-   '*.html=1;49;31'
-   # '*.yml=38;5;204'
-   # '.git*=38;5;203'
-   '.py*=38;5;228'
-   '*.md=38;5;27'
-   '*.go=38;5;27'
-   '*.rs=38;5;166'
-   '*=38;5;231'
-)
+# typeset -a ls_c
+# ls_c=(
+#    'di=1;38;5;117'
+#    'ln=1;38;5;122'
+#    'ex=38;5;217'
+#    '*.md=38;5;106'
+#    'README.md=1;38;5;136'
+#    '.*rc=38;5;183'
+#    '*.zsh=38;5;183'
+#    '*.fish=38;5;183'
+#    '.*config=38;5;183'
+#    '.zcomp*=38;5;183'
+#    '.zsh*=38;5;183'
+#    '.zprofile=38;5;183'
+#    '.zshenv=38;5;183'
+#    '*.bash=38;5;183'
+#    '.bash_profile=38;5;183'
+#    '.bash*=38;5;183'
+#    '*.sh=38;5;183'
+#    '*.zwc=38;5;183'
+#    '*.tar=38;5;60'
+#    '*.tgz=38;5;60'
+#    '*.arc=38;5;60'
+#    '*.arj=38;5;60'
+#    '*.taz=38;5;60'
+#    '*.lha=38;5;60'
+#    '*.lz4=38;5;60'
+#    '*.lzh=38;5;60'
+#    '*.lzma=38;5;60'
+#    '*.tlz=38;5;60'
+#    '*.txz=38;5;60'
+#    '*.tzo=38;5;60'
+#    '*.t7z=38;5;60'
+#    '*.zip=38;5;60'
+#    '*.z=38;5;60'
+#    '*.dz=38;5;60'
+#    '*.gz=38;5;60'
+#    '*.lrz=38;5;60'
+#    '*.lz=38;5;60'
+#    '*.lzo=38;5;60'
+#    '*.xz=38;5;60'
+#    '*.zst=38;5;60'
+#    '*.tzst=38;5;60'
+#    '*.bz2=38;5;60'
+#    '*.bz=38;5;60'
+#    '*.tbz=38;5;60'
+#    '*.tbz2=38;5;60'
+#    '*.tz=38;5;60'
+#    '*.deb=38;5;60'
+#    '*.rpm=38;5;60'
+#    '*.jar=38;5;60'
+#    '*.war=38;5;60'
+#    '*.ear=38;5;60'
+#    '*.sar=38;5;60'
+#    '*.rar=38;5;60'
+#    '*.alz=38;5;60'
+#    '*.ace=38;5;60'
+#    '*.zoo=38;5;60'
+#    '*.cpio=38;5;60'
+#    '*.7z=38;5;60'
+#    '*.rz=38;5;60'
+#    '*.cab=38;5;60'
+#    '*.wim=38;5;60'
+#    '*.swm=38;5;60'
+#    '*.dwm=38;5;60'
+#    '*.esd=38;5;60'
+#    '*.vue=38;5;48'
+#    '*.jsx=38;5;26'
+#    '*.tsx=38;5;26'
+#    '*.ts=38;5;45'
+#    '*.js=38;5;220'
+#    'package.json=38;5;193'
+#    '*.json=38;5;220'
+#    '*.css=38;5;39'
+#    '*.less=38;5;39'
+#    '*.scss=38;5;205'
+#    '*.sass=38;5;205'
+#    '*.woff=38;5;197'
+#    '*.woff2=38;5;197'
+#    '*.eot=38;5;197'
+#    '*.ttf=38;5;197'
+#    '*.otf=38;5;197'
+#    '*.html=1;49;31'
+#    # '*.yml=38;5;204'
+#    # '.git*=38;5;203'
+#    '.py*=38;5;228'
+#    '*.md=38;5;27'
+#    '*.go=38;5;27'
+#    '*.rs=38;5;166'
+#    '*=38;5;231'
+# )
 
 # unset previous LS_COLORS 
 unset LS_COLORS
 
-ls_col() {
-   for col in $ls_c; do
-      export LS_COLORS="$col:$LS_COLORS"
-   done
-   unset ls_c
-}
+# ls_col() {
+#    for col in $ls_c; do
+#       export LS_COLORS="$col:$LS_COLORS"
+#    done
+#    echo $LS_COLORS
+#    echo -ne 'Loading Colours ...'
+#    unset ls_c
+# }
+
+export LS_COLORS="*=38;5;231:*.rs=38;5;166:*.go=38;5;27:*.md=38;5;27:.py*=38;5;228:*.html=1;49;31:*.otf=38;5;197:*.ttf=38;5;197:*.eot=38;5;197:*.woff2=38;5;197:*.woff=38;5;197:*.sass=38;5;205:*.scss=38;5;205:*.less=38;5;39:*.css=38;5;39:*.json=38;5;220:package.json=38;5;193:*.js=38;5;220:*.ts=38;5;45:*.tsx=38;5;26:*.jsx=38;5;26:*.vue=38;5;48:*.esd=38;5;60:*.dwm=38;5;60:*.swm=38;5;60:*.wim=38;5;60:*.cab=38;5;60:*.rz=38;5;60:*.7z=38;5;60:*.cpio=38;5;60:*.zoo=38;5;60:*.ace=38;5;60:*.alz=38;5;60:*.rar=38;5;60:*.sar=38;5;60:*.ear=38;5;60:*.war=38;5;60:*.jar=38;5;60:*.rpm=38;5;60:*.deb=38;5;60:*.tz=38;5;60:*.tbz2=38;5;60:*.tbz=38;5;60:*.bz=38;5;60:*.bz2=38;5;60:*.tzst=38;5;60:*.zst=38;5;60:*.xz=38;5;60:*.lzo=38;5;60:*.lz=38;5;60:*.lrz=38;5;60:*.gz=38;5;60:*.dz=38;5;60:*.z=38;5;60:*.zip=38;5;60:*.t7z=38;5;60:*.tzo=38;5;60:*.txz=38;5;60:*.tlz=38;5;60:*.lzma=38;5;60:*.lzh=38;5;60:*.lz4=38;5;60:*.lha=38;5;60:*.taz=38;5;60:*.arj=38;5;60:*.arc=38;5;60:*.tgz=38;5;60:*.tar=38;5;60:*.zwc=38;5;183:*.sh=38;5;183:.bash*=38;5;183:.bash_profile=38;5;183:*.bash=38;5;183:.zshenv=38;5;183:.zprofile=38;5;183:.zsh*=38;5;183:.zcomp*=38;5;183:.*config=38;5;183:*.fish=38;5;183:*.zsh=38;5;183:.*rc=38;5;183:README.md=1;38;5;136:*.md=38;5;106:ex=38;5;217:ln=1;38;5;122:di=1;38;5;117:$LS_COLORS"
 
 # new colors for exa
 export EXA_COLORS="ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:$EXA_COLORS"
@@ -124,8 +128,8 @@ export SAVEHIST=2000
 # ---------------------------------------------------------------------------------------------
 
 # functions on initial load
-neofetch
-ls_col
+
+# ls_col
 
 # ---------------------------------------------------------------------------------------------
 
@@ -136,7 +140,7 @@ ls_col
 
 # Plugins I made and some that I got from Oh-My-Zhs plugin page https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
 plugins=(
-   dotenv
+   # dotenv
    extract
    custom-search
    k
@@ -179,12 +183,14 @@ CUSTOM_COMMANDS=(
    ::colours    "colours"
    cd           "__zoxide_z"
    calc         "eva"
-   ls           "exa -F --icons --no-user --group-directories-first --color=always --color-scale"
+   ll           "exa -F --icons --no-user --group-directories-first --color=always --color-scale"
    lg           "exa -aF --icons --no-user --group-directories-first --color=always --color-scale --no-permissions"
    la           "exa -laF --git --icons --no-user --group-directories-first --color=always --color-scale"
    tla          "exa -aFT --icons --git --no-user --group-directories-first -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale --no-permissions"
-   nla         "exa -laFT --icons --git --no-user --group-directories-first --level=2 -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale"
+   nla          "exa -laFT --icons --git --no-user --group-directories-first --level=2 -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale"
    nla2         "exa -laFT --icons --git --no-user --group-directories-first --level=3 -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale"
+   brave	"brave.exe"
+   cat		"bat --paging=never"
 )
 
 if [[ ${#CUSTOM_COMMANDS} -gt 0 ]]; then
@@ -314,6 +320,13 @@ done
 # source $ZSH/oh-my-zsh.sh
 # source ~/powerlevel10k/powerlevel10k.zsh-theme
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ---------------------------------------------------------------------------------------------
+
+colorscript random
+
+# ---------------------------------------------------------------------------------------------
+
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

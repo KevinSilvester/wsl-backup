@@ -60,21 +60,27 @@ cd $HOME/__root__/zsh
 git clone https://github.com/supercrabtree/k.git
 ```
 
+#### **[extract](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/extract.plugin.zsh)**
+```zsh
+cd $HOME/__root__/zsh
+mkdir extract
+cd extract
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/extract.plugin.zsh
+```
+
+#### **[colorize](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colorize/colorize.plugin.zsh)**
+```zsh
+cd $HOME/__root__/zsh
+mkdir colorize
+cd colorize
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colorize/colorize.plugin.zsh
+```
+
 #### **ZSH Custom Theme**
 ```zsh
 ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushed.zsh-theme
 ```
 > Based on default Robby Russel theme and Passion theme <https://github.com/ChesterYue/ohmyzsh-theme-passion>
-
-#### **ZSH Custom Plugins**
-```zsh
-ln -s $HOME/__root__/zsh/k $HOME/.oh-my-zsh/custom/plugins/k
-ln -s $HOME/__root__/zsh/printer $HOME/.oh-my-zsh/custom/plugins/printer
-ln -s $HOME/__root__/zsh/git-helper $HOME/.oh-my-zsh/custom/plugins/git-helper
-ln -s $HOME/__root__/zsh/custom-search $HOME/.oh-my-zsh/custom/plugins/custom-search
-ln -s $HOME/__root__/zsh/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-ln -s $HOME/__root__/zsh/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
 
 ******************************************************************************************************************
 
@@ -124,16 +130,18 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```zsh
 # remove default config
 cd $HOME
-rm .zshrc .gitconfig .bashrc .nanorc
+rm .zshrc .zshenv .zprofile .bashrc .bash_profile .gitconfig .nanorc
 
 # replace with new config
-ln -s $HOME/__root__/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/__root__/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/__root__/dotfiles/.zshenv $HOME/.zshenv
-ln -s $HOME/__root__/dotfiles/.bash_profile $HOME/.bash_profile
-ln -s $HOME/__root__/dotfiles/.bash_aliases $HOME/.bash_aliases
+ln -s $HOME/__root__/dotfiles/.zprofile $HOME/.zprofile
 ln -s $HOME/__root__/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/__root__/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/__root__/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/__root__/dotfiles/.nanorc $HOME/.nanorc
+
+
 ```
 
 ******************************************************************************************************************

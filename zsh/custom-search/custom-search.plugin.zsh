@@ -23,7 +23,7 @@ _web_search() {
     url="${urls[$1]}"
   fi
 
-  open_command "$url"
+  $BROWSER "$url"
 }
 
 if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
