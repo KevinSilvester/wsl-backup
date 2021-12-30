@@ -6,6 +6,7 @@ export PATH=$(/usr/bin/printenv PATH | /usr/bin/perl -ne 'print join(":", grep {
 export PATH="/mnt/c/Users/kevin/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
 export PATH="/mnt/c/Program Files/BraveSoftware/Brave-Browser/Application:$PATH"
 export PATH="/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.2.2/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 # export PATH="/mnt/c/WINDOWS/system32:$PATH"
 # export PATH="/mnt/c/WINDOWS:$PATH"
 

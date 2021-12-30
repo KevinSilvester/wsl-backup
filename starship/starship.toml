@@ -1,18 +1,16 @@
-format = '''
-[\[$directory\]](bold #bf8fff)$git_branch$git_status$cmd_duration$battery$memory_usage$nodejs$java$package
-$character
-'''
+format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$package
+$character'''
 
 right_format = '''$time'''
 
 add_newline = true
 [character]
-success_symbol = "[~>](bold #b0ffa1)"
-error_symbol = "[~>](bold #ff4a4a)"
+success_symbol = "[[](bold #b0ffa1)](bold #b0ffa1)"
+error_symbol = "[[](bold #ff614f)](bold #ff614f)"
 
 [directory]
 format = '[$path](bold 45)'
-truncation_length = 8
+truncation_length = 5
 truncation_symbol = "…/"
 truncate_to_repo = false
 ### repo style causing space after directory name
@@ -29,12 +27,14 @@ style	=  "bold 45"
 disabled = false
 
 [cmd_duration]
-format = ' [\[$duration\]](bold #a8f7d1)'
+format = ' [ $duration](bold #a8f7d1)'
 min_time = 5
 
 [git_branch]
-format = ' [\[[$symbol$branch](bold #ff4a4a)\]](bold #00bbff)'
-style = 'bold #ff4a4a'
+symbol = ''
+# format = ' [[git:\(](bold #958aeb)$branch $symbol[\)](bold #958aeb)](bold #fc6358)'
+format = ' [on $branch $symbol](bold #fc6358)'
+style = 'bold #fc6358'
 
 [git_status]
 format = ' ([\[$all_status$ahead_behind\]]($style))'

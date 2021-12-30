@@ -189,8 +189,8 @@ CUSTOM_COMMANDS=(
    tla          "exa -aFT --icons --git --no-user --group-directories-first -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale --no-permissions"
    nla          "exa -laFT --icons --git --no-user --group-directories-first --level=2 -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale"
    nla2         "exa -laFT --icons --git --no-user --group-directories-first --level=3 -I=\"node_modules|.git|.next|.svelte-kit|.idea\" --color=always --color-scale"
-   brave	"brave.exe"
-   cat		"bat --paging=never"
+   brave	      "brave.exe"
+   bcat		   "bat --paging=never"
 )
 
 if [[ ${#CUSTOM_COMMANDS} -gt 0 ]]; then
@@ -233,13 +233,14 @@ create_mern_app() {
    echo -e "\n${color1}Generated .gitignore${reset}\n";
    echo -e "${color1}Creating React App in 'client'${reset}\n\n";
    z client;
-   ::cra \./;
+   pnpm create vite ./ --template react-ts;
    pnpm i;
+   pnpm add -D postcss cssnano tailwindcss@latest autoprefixer concurrently;
    ::git --ra;
    echo -e "\n\n${color1}Creating server in 'server'${reset}\n\n";
    z \.\./server;
    npm init -y;
-   pnpm add body-parser cors express mongoose nodemon;
+   pnpm add body-parser cors express mongoose nodemon dotenv;
    z \.\.;
    echo -e "\n\n${color2}** $1 Generated **${reset}\n";
 }
@@ -330,6 +331,7 @@ colorscript random
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+source $ROOT/zsh/printer/printer.zsh
 source $ROOT/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ROOT/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 typeset -A ZSH_HIGHLIGHT_STYLES
