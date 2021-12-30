@@ -24,7 +24,9 @@ fish_add_path -g  "/mnt/c/WINDOWS/system32"
 fish_add_path -g  "/mnt/c/WINDOWS"
 
    
-set -Ux EXA_COLORS 'ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:'
+# set -Ux EXA_COLORS 'ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:sn=38;5;147:sb=38;5;147:uw=38;5;224:gw=38;5;224:tw=38;5;224:ur=38;5;229:gr=38;5;229:tr=38;5;229:ux=38;5;193:ue=38;5;193:gx=38;5;193:tx=38;5;193:'
+
+set -Ux EXA_COLORS 'ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:sn=38;5;189:sb=38;5;189:uw=38;5;189:gw=38;5;189:tw=38;5;189:ur=38;5;189:gr=38;5;189:tr=38;5;189:ux=38;5;189:ue=38;5;189:gx=38;5;189:tx=38;5;189:'
 
 set -e LS_COLORS
 
@@ -56,10 +58,10 @@ set -l white f7f7f7
 
 # Syntax Highlighting
 set -g fish_color_normal $foreground
-set -g fish_color_command $green
-set -g fish_color_param $flamingo
+set -g fish_color_command $teal
+set -g fish_color_param $magenta
 set -g fish_color_keyword $red
-set -g fish_color_quote $green
+set -g fish_color_quote $blue
 set -g fish_color_redirection $pink
 set -g fish_color_end $peach
 set -g fish_color_error $red
@@ -78,6 +80,7 @@ set -g fish_pager_color_description $gray
 
 # reload
 alias reload='source ~/.config/fish/config.fish'
+alias nvim-config='nvim ~/.config/nvim/init.vim'
 
 # exa
 alias ls='LS_COLORS="$COL__" exa -F --no-user --group-directories-first --color=always --color-scale'
