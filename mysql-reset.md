@@ -6,7 +6,7 @@
 
 1. Make sure MySQL isn't running and kill all running processes
    
-shell`
+```fish
 # try this first
 sudo systemctl stop mysql
 
@@ -16,11 +16,11 @@ sudo ps -aux
 # to view all running processes
 # then kill all mysql process by PID
 kill -9 {PID}
-`
+```
 
 2. Purge all of the MySQL packages
 
-shell`
+```fish
 # since wildcard doesn't work in fish (and I'm too lazy to find out how to it properly 😁)
 bash -c "sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*"
 
@@ -33,19 +33,19 @@ sudo apt autoclean
 
 # reconfigure dpkg
 sudo dpkg --configure -a
-`
+```
 
 3. Re-install mysql-server and dependencies
 
-shell`
+```fish
 sudo apt update
 sudo apt --fix-broken install
 sudo apt-get --reinstall install mysql-client-core-8.0 -y
 sudo apt install mysql-server -y
-`
+```
 
 4. Pray that it doesn't mess up and check if it's installed
 
-shell`
+```fish
 mysql --version
-`
+```
