@@ -312,7 +312,6 @@ colours() {
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 for i in $plugins; do
    source "$ROOT/zsh/$i/$i.plugin.zsh" 
@@ -344,3 +343,5 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9'
 ZSH_HIGHLIGHT_STYLES[path]='underline'
 bindkey '^\t' autosuggest-accept
 ZSH_AUTOSUGGEST_STRATEGY=(history match_prev_cmd)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,4 +1,4 @@
-format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$package
+format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$php$package
 $character'''
 
 right_format = '''$time'''
@@ -10,7 +10,7 @@ error_symbol = "[[](bold #ff614f)](bold #ff614f)"
 
 [directory]
 format = '[$path](bold 45)'
-truncation_length = 5
+truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
 ### repo style causing space after directory name
@@ -27,7 +27,7 @@ style	=  "bold 45"
 disabled = false
 
 [cmd_duration]
-format = ' [ $duration](bold #a8f7d1)'
+format = ' [$duration](bold #a8f7d1)'
 min_time = 5
 
 [git_branch]
@@ -46,6 +46,10 @@ format = " [$symbol($version )](bold #b0ffa1)"
 [java]
 format = " [${symbol}(${version})](bold #f78800)"
 symbol = " "
+
+[php]
+format = " [${symbol}(${version})](bold #828bb7)"
+symbol = " "
 
 [package]
 format = " [$symbol$version]($style)"
