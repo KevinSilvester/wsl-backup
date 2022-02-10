@@ -49,7 +49,7 @@ symbol = " "
 
 [php]
 format = " [${symbol}(${version})](bold #828bb7)"
-symbol = " "
+# symbol = " "
 
 [package]
 format = " [$symbol$version]($style)"

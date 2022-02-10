@@ -18,6 +18,7 @@ set -Ux WT_CONFIG "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8w
 fish_add_path -g  "$HOME/.cargo/bin"
 fish_add_path -g  "$HOME/.yarn/bin"
 fish_add_path -g  "$HOME/.config/yarn/global/node_modules/.bin"
+fish_add_path -g  "$HOME/.config/composer/vendor/bin"
 fish_add_path -g  "$HOME/.pyenv/bin"
 fish_add_path -g  "$HOME/.local/bin"
 fish_add_path -g  "$HOME/.nvm/bin"
@@ -120,6 +121,10 @@ alias ::dkit="z $WIN_HOME/OneDrive - Dundalk Institute of Technology"
 
 # termimage
 alias ::img='termimage'
+
+#mysql
+alias mysql-start='sudo /etc/init.d/mysql start'
+alias mysql-stop='mysqladmin -p shutdown'
 
 # bat
 alias bcat='bat --paging=never --color=always --style=numbers'
