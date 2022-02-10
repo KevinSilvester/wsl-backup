@@ -4,7 +4,7 @@
 *****************************************************
 
 ## Install PHP
-fish```
+```fish
 # make sure all packages are up to date
 sudo apt update && sudo apt upgrade
 
@@ -26,7 +26,7 @@ sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4
 *****************************************************
 
 ## Install composer
-bash```
+```bash
 # change shell to bash
 bash
 
