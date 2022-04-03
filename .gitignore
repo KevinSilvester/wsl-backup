@@ -3,3 +3,5 @@ zsh/colorize
 zsh/dotenv
 zsh/extract
 zsh/k
+sqls/config.yml
+lvim/plugin
