@@ -1,4 +1,4 @@
-format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$php$package
+format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$php$cmake$package
 $character'''
 
 right_format = '''$time'''
@@ -20,7 +20,7 @@ read_only_style = 'bold 45'
 style	=  "bold 45"
 
 [directory.substitutions]
-"/mnt/c" = "~C"
+# "/mnt/c" = "~C"
 "OneDrive - Dundalk Institute of Technology" = '~DKIT'
 
 [battery]
@@ -50,6 +50,9 @@ symbol = " "
 [php]
 format = " [${symbol}(${version})](bold #828bb7)"
 # symbol = " "
+
+[cmake]
+format = " [$symbol($version )]($style)"
 
 [package]
 format = " [$symbol$version]($style)"

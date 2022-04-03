@@ -12,6 +12,14 @@ unset LS_COLORS
 LS_COLORS='*=38;5;231:*.rs=38;5;166:*.go=38;5;27:*.md=38;5;27:.py*=38;5;228:*.html=1;49;31:*.otf=38;5;197:*.ttf=38;5;197:*.eot=38;5;197:*.woff2=38;5;197:*.woff=38;5;197:*.sass=38;5;205:*.scss=38;5;205:*.less=38;5;39:*.css=38;5;39:*.json=38;5;220:package.json=38;5;193:*.js=38;5;220:*.ts=38;5;45:*.tsx=38;5;26:*.jsx=38;5;26:*.vue=38;5;48:*.esd=38;5;60:*.dwm=38;5;60:*.swm=38;5;60:*.wim=38;5;60:*.cab=38;5;60:*.rz=38;5;60:*.7z=38;5;60:*.cpio=38;5;60:*.zoo=38;5;60:*.ace=38;5;60:*.alz=38;5;60:*.rar=38;5;60:*.sar=38;5;60:*.ear=38;5;60:*.war=38;5;60:*.jar=38;5;60:*.rpm=38;5;60:*.deb=38;5;60:*.tz=38;5;60:*.tbz2=38;5;60:*.tbz=38;5;60:*.bz=38;5;60:*.bz2=38;5;60:*.tzst=38;5;60:*.zst=38;5;60:*.xz=38;5;60:*.lzo=38;5;60:*.lz=38;5;60:*.lrz=38;5;60:*.gz=38;5;60:*.dz=38;5;60:*.z=38;5;60:*.zip=38;5;60:*.t7z=38;5;60:*.tzo=38;5;60:*.txz=38;5;60:*.tlz=38;5;60:*.lzma=38;5;60:*.lzh=38;5;60:*.lz4=38;5;60:*.lha=38;5;60:*.taz=38;5;60:*.arj=38;5;60:*.arc=38;5;60:*.tgz=38;5;60:*.tar=38;5;60:*.zwc=38;5;183:*.sh=38;5;183:.bash*=38;5;183:.bash_profile=38;5;183:*.bash=38;5;183:.zshenv=38;5;183:.zprofile=38;5;183:.zsh*=38;5;183:.zcomp*=38;5;183:.*config=38;5;183:*.fish=38;5;183:*.zsh=38;5;183:.*rc=38;5;183:ex=38;5;217:ln=38;5;122:di=38;5;117:'
 export LS_COLORS
 
+export PATH="/mnt/wslg/runtime-dir/fnm_multishells/8759_1646615068743/bin":$PATH
+export FNM_MULTISHELL_PATH="/mnt/wslg/runtime-dir/fnm_multishells/8759_1646615068743"
+export FNM_VERSION_FILE_STRATEGY="local"
+export FNM_DIR="/home/wsl1/.local/share/fnm"
+export FNM_LOGLEVEL="info"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_ARCH="x64"
+
 # Starship config
 export STARSHIP_CONFIG=$ROOT/starship/starship.toml
 
@@ -36,6 +44,68 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
+
+# config
+alias wt-config='nvim $WT_CONFIG/settings.json'
+alias reload='source ~/.config/fish/config.fish'
+alias nvim-config='nvim ~/.config/nvim/init.vim'
+alias lvim-config='lvim ~/.config/lvim/config.lua'
+alias zsh-config='lvim $ROOT/dotfiles/.zshrc' 
+alias bash-config='lvim $ROOT/dotfiles/.bashrc'
+alias git-config='lvim $ROOT/dotfiles/.gitconfig'
+alias fish-config='lvim $ROOT/fish/config.fish'
+alias starship-config='lvim $ROOT/starship/starship.toml'
+alias w-starship-config='lvim $WIN_HOME/.config/starship.toml'
+alias w-nvim-config='lvim $WIN_HOME/AppData/Local/nvim/init.vim'
+alias w-lvim-config='lvim $WIN_HOME/AppData/Local/lvim/config.lua'
+
+# exa
+alias ls='LS_COLORS="$COL__" exa -F --no-user --group-directories-first --color=always --color-scale'
+alias ll='LS_COLORS="$COL__" exa -F --icons --no-user --group-directories-first --color=always --color-scale'
+alias la='LS_COLORS="$COL__" exa -laF --git --icons --no-user --group-directories-first --color=always --color-scale'
+alias lg='LS_COLORS="$COL__" exa -aF --icons --no-user --group-directories-first --color=always --color-scale --no-permissions'
+alias lat='LS_COLORS="$COL__" exa -aFT --icons --no-user --group-directories-first -L=2 -I="node_modules|.git|.next|.svelte-kit|.idea" --color=always --color-scale'
+alias nla='LS_COLORS="$COL__" exa -laFT --icons --git --no-user --group-directories-first -L=2 -I="node_modules|.git|.next|.svelte-kit|.idea" --color=always --color-scale'
+
+# zoxide
+alias ::root='z ~/__root__'
+alias ::edit-root='code ~/__root__'
+alias ::y2='z ~/year-2'
+alias ::c="z $C"
+alias ::win-home='z $WIN_HOME'
+alias ::desktop="z $WIN_HOME/Desktop"
+alias ::downloads="z $WIN_HOME/Downloads"
+alias ::documents="z $WIN_HOME/Documents"
+alias ::music="z $WIN_HOME/Music"
+alias ::pictures="z $WIN_HOME/Pictures"
+alias ::videos="z $WIN_HOME/Videos"
+alias ::dkit="z $WIN_HOME/OneDrive - Dundalk Institute of Technology"
+alias ::wy2="z $WIN_HOME/OneDrive - Dundalk Institute of Technology/year-2/semester-2"
+
+# termimage
+alias ::img='termimage'
+
+#mysql
+alias mysql-start='sudo /etc/init.d/mysql start'
+alias mysql-stop='mysqladmin -p shutdown'
+
+# bat
+alias bcat='bat --paging=never --color=always --style=numbers'
+
+# fzf
+alias fzf-bat='fzf --layout=reverse --height=85% --preview "bat --paging=never --style=numbers --color=always {}"'
+alias fzf-cd='cd (fd --type directory | fzf --layout=reverse --height=85%)'
+
+# Windows programmes
+alias explore='explorer.exe'
+alias notepad='Notepad.exe'
+alias brave='brave.exe'
+alias idea='idea64.exe'
+alias clion='clion64.exe'
+alias phpstorm='phpstorm64.exe'
+
+# Windows MSYS2 GCC
+alias w-g++='g++.exe'
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
