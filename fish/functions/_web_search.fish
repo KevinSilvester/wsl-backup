@@ -6,4 +6,5 @@ function _web_search --description "search on browser"
    end
 
    $BROWSER "$url"
+   set -e url
 end
