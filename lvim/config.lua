@@ -83,8 +83,10 @@ lvim.builtin.which_key.mappings['t'] = {
 
 lvim.builtin.which_key.mappings['C'] = {
    name = '+Cmake Helper',
+   c = { '<cmd>TermExec cmd="ch --clear"<cr>', 'Clear Project' },
    i = { '<cmd>TermExec cmd="ch --init"<cr>', 'Initialize' },
-   c = { '<cmd>TermExec cmd="ch --compile"<cr>', 'Compile and Run' },
+   b = { '<cmd>TermExec cmd="ch --build --run"<cr>', 'Build and Run' },
+   B = { '<cmd>TermExec cmd="ch --build release"<cr>', 'Build Release' },
    r = { '<cmd>TermExec cmd="ch --run"<cr>', 'Run' },
 }
 lvim.builtin.which_key.mappings['n'] = {
@@ -143,7 +145,7 @@ local clangd_flags = {
    '--completion-style=detailed',
    '--enable-config', -- clangd 11+ supports reading from .clangd configuration file
    '--clang-tidy',
-   '--fallback-style=Microsoft',
+   '--fallback-style=Google',
 }
 
 local clangd_bin = 'clangd-12'
