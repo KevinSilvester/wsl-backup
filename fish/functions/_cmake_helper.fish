@@ -14,12 +14,21 @@ function _cmake_helper --description "Initialize a cmake project with some basic
       set -l files   (eval fd -e h -e cpp -E release -E build -E cmake-build-debug -X echo)
       set -l config  .ch-config.yml
 
+      set -l GCC (which gcc-11)
+      set -l GPP (which g++-11)
+
       # if [ -e $dir/$config ]
       #    set project (eval yq '.project' $config)
       # end
 
       getopts $argv | while read -l arg value
          switch $arg
+            case _
+               if [ $value = 'win' ]
+                  set GCC C:/msys64/mingw64/bin/gcc.exe
+                  set GPP C:/msys64/mingw64/bin/g++.exe
+                  set dir (string replace '/mnt/c' 'C:' (pwd))
+               end
             case clear
                test -d $dir/build-release;  and rm -r build-release
                test -d $dir/build-debug;    and rm -r build-debug
@@ -40,9 +49,14 @@ function _cmake_helper --description "Initialize a cmake project with some basic
                cmake --no-warn-unused-cli \
                      -DCAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
                      -DCMAKE_BUILD_TYPE:STRING=Debug \
+                     -DCMAKE_C_COMPILER:FILEPATH=$GCC \
+                     -DCMAKE_CXX_COMPILER:FILEPATH=$GPP \
+                     -H(echo $dir) -B(echo $dir/build-debug) -G Ninja
+
+               cmake -DCMAKE_BUILD_TYPE:STRING=Debug \
                      -DCMAKE_C_COMPILER:FILEPATH=(which gcc-11) \
                      -DCMAKE_CXX_COMPILER:FILEPATH=(which g++-11) \
-                     -H(echo $dir) -B(echo $dir/build-debug) -G Ninja
+                     -B(echo (pwd)/build-debug) -G Ninja
 
                set_color $success; echo -e "\n'🎊 CMakeLists.txt', '.clang-format' and 'build-debug' created 🎊" >&2
                set_color $reset
@@ -56,7 +70,6 @@ function _cmake_helper --description "Initialize a cmake project with some basic
                      return 0
                   else
                      cmake --no-warn-unused-cli \
-                        -DCAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
                         -DCMAKE_BUILD_TYPE:STRING=Release \
                         -DCMAKE_C_COMPILER:FILEPATH=(which gcc-11) \
                         -DCMAKE_CXX_COMPILER:FILEPATH=(which g++-11) \
