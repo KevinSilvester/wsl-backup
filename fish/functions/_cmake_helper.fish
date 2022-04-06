@@ -16,11 +16,18 @@ function _cmake_helper --description "Initialize a cmake project with some basic
 
       set -l GCC (which gcc-11)
       set -l GPP (which g++-11)
+      set -l CMAKE (which cmake)
 
       # if [ -e $dir/$config ]
       #    set project (eval yq '.project' $config)
       # end
 
+      # cmake clion
+      # '/mnt/c/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/bin/cmake.exe' /
+      # -DCMAKE_BUILD_TYPE=Debug
+      # '/mnt/c/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/bin/cmake.exe'
+      # -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S . -B build -DCMAKE_C_COMPILE
+      # R:FILEPATH=C:/msys64/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER:FILEPATH=C:/msys64/mingw64/bin/g++.exe -DCAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE-G "CodeBlocks - MinGW Makefiles" -S . -B build 
       getopts $argv | while read -l arg value
          switch $arg
             case _
