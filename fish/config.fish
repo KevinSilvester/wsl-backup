@@ -12,6 +12,7 @@ set -Ux GOROOT "$GO_DIR/go-1.17.5"
 set -Ux GOPATH "$GOROOT/pkg"
 set -Ux GOBIN "$GOPATH/bin"
 set -Ux BROWSER brave.exe
+set -Ux EDITOR "lvim"
 set -gx STARSHIP_CONFIG "$ROOT/starship/starship.toml"
 set -gx WT_CONFIG "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 set -gx PS_CONFIG "$WIN_HOME/Documents/WindowsPowerShell"
