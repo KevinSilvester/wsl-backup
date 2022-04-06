@@ -49,7 +49,7 @@ function _cmake_helper --description "Initialize a cmake project with some basic
             case b build
                if [ $value = 'release' ]
                   if [ -d $dir/build-release ]
-                     cmake --build (echo $dir/build-release) --config Release --target $project -j 10 --
+                     cmake --build \"$dir/build-release\" --config Release --target $project -j 10 --
 
                      set_color $success; echo -e "\nRelease build built to 'build-release'" >&2
                      set_color $reset
@@ -62,7 +62,7 @@ function _cmake_helper --description "Initialize a cmake project with some basic
                         -DCMAKE_CXX_COMPILER:FILEPATH=(which g++-11) \
                         -H(echo $dir) -B(echo $dir/build-release) -G Ninja
 
-                     cmake --build (echo $dir/build-release) --config Release --target $project -j 10 --
+                     cmake --build $dir/build-release --config Release --target $project -j 10 --
 
                      set_color $success; echo -e "\nRelease build built to 'build-release'" >&2
                      set_color $reset
@@ -70,34 +70,34 @@ function _cmake_helper --description "Initialize a cmake project with some basic
                   end
                else
                   if [ -d $dir/build-debug ]
-                     cmake --build (echo $dir/build-debug) --config Debug --target $project -j 10 --
+                     cmake --build $dir/build-debug --config Debug --target $project -j 10 --
                      set_color $success; echo -e "\nProject built to 'build-debug'" >&2
                      set_color $reset
                   else
                      set_color $warning; echo -e "\nNo build directory found" >&2 
-                     set_color $info;    echo "Run 'ch --init' first" >&2
+                     set_color $info;    echo "Run 'ch --init' first to initialize project with build directory" >&2
                      set_color $reset
                      return 1
                   end
                end
             case r run
                if [ -d $dir/build-debug ]; and [ -e $dir/build-debug/$project ]
-                  eval $dir/build-debug/$project                      
+                  eval \"$dir/build-debug/$project\"                      
                else
-                  set_color $warning; echo -e "\nNo build directory or compiled file found" >&2
-                  set_color $info;    echo "Run 'ch --compile' to compile project" >&2
+                  set_color $warning; echo -e "\nNo build directory or executable file found" >&2
+                  set_color $info;    echo "Run 'ch --build' to build project" >&2
                   set_color $reset
                   return 1
                end
             case '*'
                set_color $warning; echo -e "\nUnexpected argument recieved" >&2
-               set_color $info;    echo "Arguments expected ( -i/--init | -b/--build [release] | -r/--run )" >&2
+               set_color $info;    echo "Arguments expected ( -i/--init | -b/--build [release] | -r/--run | --clear )" >&2
                set_color $reset
                return 1
          end
       end
    else
-      set_color $info; echo -e "\nArguments expected ( -i/--init | -b/--build [release] | -r/--run )" >&2
+      set_color $info; echo -e "\nArguments expected ( -i/--init | -b/--build [release] | -r/--run | --clear )" >&2
       set_color $reset
       return 1
    end

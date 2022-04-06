@@ -146,6 +146,7 @@ alias lan='LS_COLORS="$COL__" exa -laFT --icons --git --no-user --group-director
 
 # cmake helper
 alias ch='_cmake_helper'
+alias w-make='/mnt/c/Users/kevin/scoop/apps/make/current/bin/make.exe'
 
 # zoxide
 alias ::root='z ~/__root__'
