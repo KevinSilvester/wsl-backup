@@ -47,7 +47,7 @@ function _cmake_helper --description "Initialize a cmake project with some basic
          end
       end
 
-      # use the 
+      # use the config file set the project name and bin name
       if [ -e $dir/$config ]
          set project (eval yq '.project' $config)
          set bin     $project
