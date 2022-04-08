@@ -291,6 +291,7 @@ lvim.plugins = {
          vim.cmd('xmap gS       <Plug>VgSurround')
       end,
    },
+   { 'tpope/vim-fugitive' },
    { 'catppuccin/nvim', as = 'catppuccin' },
    -- { "nvim-lua/plenary.nvim" },
    { 'Shatur/neovim-cmake' },
