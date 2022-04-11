@@ -147,14 +147,14 @@ alias lan='LS_COLORS="$COL__" exa -laFT --icons --git --no-user --group-director
 
 # cmake helper
 alias ch='_cmake_helper'
-alias w-make='/mnt/c/Users/kevin/scoop/apps/make/current/bin/make.exe'
+alias wmake='/mnt/c/Users/kevin/scoop/apps/make/current/bin/make.exe'
 
 # zoxide
 alias ::root='z ~/__root__'
 alias ::edit-root='code ~/__root__'
 alias ::y2='z ~/year-2'
 alias ::c="z $C"
-alias ::win-home='z $WIN_HOME'
+alias ::win-home="z $WIN_HOME"
 alias ::desktop="z $WIN_HOME/Desktop"
 alias ::downloads="z $WIN_HOME/Downloads"
 alias ::documents="z $WIN_HOME/Documents"

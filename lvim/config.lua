@@ -85,9 +85,12 @@ lvim.builtin.which_key.mappings['C'] = {
    name = '+Cmake Helper',
    c = { '<cmd>TermExec cmd="ch --clear"<cr>', 'Clear Project' },
    i = { '<cmd>TermExec cmd="ch --init"<cr>', 'Initialize' },
-   b = { '<cmd>TermExec cmd="ch --build --run"<cr>', 'Build and Run' },
-   B = { '<cmd>TermExec cmd="ch --build release"<cr>', 'Build Release' },
+   b = { '<cmd>TermExec cmd="ch --build && ch --run"<cr>', 'Build and Run' },
    r = { '<cmd>TermExec cmd="ch --run"<cr>', 'Run' },
+   w = {
+      b = { '<cmd>TermExec cmd="ch win --build && ch win --run"<cr>', 'Build and Run Windows' },
+      r = { '<cmd>TermExec cmd="ch win --run"<cr>', 'Run Windows' },
+   }
 }
 lvim.builtin.which_key.mappings['n'] = {
    name = '+NvimTree',

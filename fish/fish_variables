@@ -24,7 +24,7 @@ SETUVAR --export TERM:xterm\x2d256color
 SETUVAR --export WIN_HOME:/mnt/c/Users/kevin
 SETUVAR --export WT_CONFIG:/mnt/c/Users/kevin/AppData/Local/Packages/Microsoft\x2eWindowsTerminal_8wekyb3d8bbwe/LocalState
 SETUVAR --export ZSH:/home/wsl1/\x2eoh\x2dmy\x2dzsh
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/home/wsl1/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/home/wsl1/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/home/wsl1/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_edc_2F_bass_files:/home/wsl1/\x2econfig/fish/functions/__bass\x2epy\x1e/home/wsl1/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/wsl1/\x2econfig/fish/functions/fisher\x2efish\x1e/home/wsl1/\x2econfig/fish/completions/fisher\x2efish
@@ -57,4 +57,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/wsl1/\x2envm/versions/node/v16\x2e13\x2e1/bin\x1e/mnt/c/WINDOWS\x1e/mnt/c/WINDOWS/system32\x1e/home/wsl1/\x2eemacs\x2ed/bin\x1e/mnt/c/Program\x20Files/JetBrains/IntelliJ\x20IDEA\x202021\x2e2\x2e2/bin\x1e/mnt/c/Program\x20Files/BraveSoftware/Brave\x2dBrowser/Application\x1e/mnt/c/Users/kevin/AppData/Local/Programs/Microsoft\x20VS\x20Code/bin\x1e/home/wsl1/\x2ecargo/bin\x1e/home/wsl1/\x2eyarn/bin\x1e/home/wsl1/\x2econfig/yarn/global/node_modules/\x2ebin\x1e/home/wsl1/\x2epyenv/bin\x1e/home/wsl1/\x2elocal/bin\x1e/home/wsl1/\x2envm/bin\x1e/home/wsl1/\x2efzf/bin
