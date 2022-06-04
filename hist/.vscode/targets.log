@@ -1,0 +1,299 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Jun  2 13:38:43 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+C = /mnt/c
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/wsl1/__root__/i-hist
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+COL__ = *=38;5;253:*.rs=38;5;166:*.go=38;5;27:.py*=38;5;228:*.html=1;49;31:*.otf=38;5;197:*.ttf=38;5;197:*.eot=38;5;197:*.woff2=38;5;197:*.woff=38;5;197:*.sass=38;5;205:*.scss=38;5;205:*.less=38;5;39:*.css=38;5;39:*.json=38;5;228:package.json=38;5;193:*.js=38;5;228:*.ts=38;5;69:*.tsx=38;5;69:*.jsx=38;5;69:*.vue=38;5;48:*.esd=38;5;60:*.dwm=38;5;60:*.swm=38;5;60:*.wim=38;5;60:*.cab=38;5;60:*.rz=38;5;60:*.7z=38;5;60:*.cpio=38;5;60:*.zoo=38;5;60:*.ace=38;5;60:*.alz=38;5;60:*.rar=38;5;60:*.sar=38;5;60:*.ear=38;5;60:*.war=38;5;60:*.jar=38;5;60:*.rpm=38;5;60:*.deb=38;5;60:*.tz=38;5;60:*.tbz2=38;5;60:*.tbz=38;5;60:*.bz=38;5;60:*.bz2=38;5;60:*.tzst=38;5;60:*.zst=38;5;60:*.xz=38;5;60:*.lzo=38;5;60:*.lz=38;5;60:*.lrz=38;5;60:*.gz=38;5;60:*.dz=38;5;60:*.z=38;5;60:*.zip=38;5;60:*.t7z=38;5;60:*.tzo=38;5;60:*.txz=38;5;60:*.tlz=38;5;60:*.lzma=38;5;60:*.lzh=38;5;60:*.lz4=38;5;60:*.lha=38;5;60:*.taz=38;5;60:*.arj=38;5;60:*.arc=38;5;60:*.tgz=38;5;60:*.tar=38;5;60:*.zwc=38;5;183:*.sh=38;5;183:.bash*=38;5;183:.bash_profile=38;5;183:*.bash=38;5;183:.zshenv=38;5;183:.zprofile=38;5;183:.zsh*=38;5;183:.zcomp*=38;5;183:.*config=38;5;183:*.fish=38;5;183:*.zsh=38;5;183:.*rc=38;5;183:README.md=1;38;5;136:*.md=38;5;106:ex=38;5;217:ln=1;38;5;122:di=1;38;5;117:
+# makefile (from 'Makefile', line 2)
+OUTPATH := /home/wsl1/.local/bin/i-hist
+# environment
+STARSHIP_SESSION_KEY = 6618145825300191
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+WT_CONFIG = /mnt/c/Users/kevin/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+EXA_COLORS = ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:sn=38;5;189:sb=38;5;189:uw=38;5;189:gw=38;5;189:tw=38;5;189:ur=38;5;189:gr=38;5;189:tr=38;5;189:ux=38;5;189:ue=38;5;189:gx=38;5;189:tx=38;5;189:
+# environment
+FNM_NODE_DIST_MIRROR = https://nodejs.org/dist
+# environment
+VSCODE_CWD = /mnt/c/Users/kevin/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/wsl1/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/home/wsl1/.local/share/pnpm:/mnt/wslg/runtime-dir/fnm_multishells/10763_1653949580934/bin:/home/linuxbrew/.linuxbrew/bin:/home/wsl1/.go/go-1.17.5/pkg/bin:/home/wsl1/.go/go-1.17.5/bin:/mnt/c/msys64/mingw64/bin:/home/wsl1/.config/composer/vendor/bin:/home/wsl1/.bun/bin:/home/wsl1/.fnm:/home/wsl1/.nvm/versions/node/v16.13.1/bin:/mnt/c/WINDOWS:/mnt/c/WINDOWS/system32:/home/wsl1/.emacs.d/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.2.2/bin:/mnt/c/Program Files/BraveSoftware/Brave-Browser/Application:/mnt/c/Users/kevin/AppData/Local/Programs/Microsoft VS Code/bin:/home/wsl1/.cargo/bin:/home/wsl1/.yarn/bin:/home/wsl1/.config/yarn/global/node_modules/.bin:/home/wsl1/.pyenv/bin:/home/wsl1/.local/bin:/home/wsl1/.nvm/bin:/home/wsl1/.fzf/bin:/mnt/wslg/runtime-dir/fnm_multishells/10503_1653949580414/bin:/home/wsl1/.local/share/pnpm:/mnt/wslg/runtime-dir/fnm_multishells/9987_1653949085305/bin:/home/wsl1/.fnm:/mnt/wslg/runtime-dir/fnm_multishells/9549_1653949084822/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/snap/bin
+# environment
+FNM_DIR = /home/wsl1/.local/share/fnm
+# environment
+XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
+# environment
+PNPM_HOME = /home/wsl1/.local/share/pnpm
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+ROOT = /home/wsl1/__root__
+# environment
+GOPATH = /home/wsl1/.go/go-1.17.5/pkg
+# environment
+FNM_LOGLEVEL = info
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-9e423ae1-8008-4aba-9919-1e4606c7226b.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# automatic
+%F = $(notdir $%)
+# environment
+GOBIN = /home/wsl1/.go/go-1.17.5/pkg/bin
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/wsl1/__root__/i-hist
+# environment
+PS_CONFIG = /mnt/c/Users/kevin/Documents/WindowsPowerShell
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/9527_interop
+# environment
+PULSE_SERVER = /mnt/wslg/PulseServer
+# environment
+WT_SESSION = 8a82ca8c-3d86-4c36-a9de-c09b752b0a6c
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/wsl1
+# environment
+FNM_MULTISHELL_PATH = /mnt/wslg/runtime-dir/fnm_multishells/10763_1653949580934
+# environment
+LOGNAME = wsl1
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+ZSH = /home/wsl1/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+RUST_SRC_PATH = /home/wsl1/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+# environment
+SHLVL = 2
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = wsl1
+# makefile (from 'Makefile', line 15)
+.DEFAULT_GOAL := install
+# default
+MAKECMDGOALS := all
+# environment
+GOROOT = /home/wsl1/.go/go-1.17.5
+# environment
+NAME = Code
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/kevin/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# default
+MAKE_COMMAND := make
+# environment
+FZF_DEFAULT_OPS = --extended
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 1)
+PROGRAM := i-hist
+# environment
+BUN_INSTALL = /home/wsl1/.bun
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+WIN_HOME = /mnt/c/Users/kevin
+# environment
+NVM_DIR = /home/wsl1/.nvm
+# environment
+FNM_VERSION_FILE_STRATEGY = local
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = brave.exe
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# environment
+WT_PROFILE_ID = {2c4de342-38b7-51cf-b940-2309a097f518}
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+EDITOR = lvim
+# environment
+GO_DIR = /home/wsl1/.go
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# environment
+FNM_ARCH = x64
+# default
+SUFFIXES := 
+# environment
+WAYLAND_DISPLAY = wayland-0
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# environment
+STARSHIP_CONFIG = /home/wsl1/__root__/starship/starship.toml
+# environment
+STARSHIP_SHELL = fish
+# variable set hash-table stats:
+# Load=99/1024=10%, Rehash=0, Collisions=12/127=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2080, inode 169): 11 files, no impossibilities.
+
+# 11 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: clean install uninstall
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 12):
+	rm $(OUTPATH)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-02 05:15:43.2929584
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
+	rm -rf ./target
+
+install:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	cargo build --release 
+	cp ./target/release/installer-hist $(OUTPATH)
+
+# files hash-table stats:
+ 
+# Load=8/1024=1%, Rehash=0, Collisions=2/21=10%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 20 / storage = 171 B / avg = 8 B
+# current buf: size = 8162 B / used = 171 B / count = 20 / avg = 8 B
+
+# strcache performance: lookups = 31 / hit rate = 35%
+# hash-table stats:
+# Load=20/8192=0%, Rehash=0, Collisions=1/31=3%
+# Finished Make data base on Thu Jun  2 13:38:43 2022
+
+ 

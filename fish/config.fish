@@ -8,7 +8,7 @@ set -Ux WIN_HOME "$C/Users/kevin"
 set -Ux FZF_DEFAULT_OPS "--extended"
 set -Ux NVM_DIR "$HOME/.nvm"
 set -Ux GO_DIR "$HOME/.go"
-set -Ux GOROOT "$GO_DIR/go-1.17.5"
+set -Ux GOROOT "/home/linuxbrew/.linuxbrew/bin/go"
 set -Ux GOPATH "$GOROOT/pkg"
 set -Ux GOBIN "$GOPATH/bin"
 set -Ux BROWSER brave.exe
@@ -16,6 +16,9 @@ set -Ux EDITOR "lvim"
 set -gx STARSHIP_CONFIG "$ROOT/starship/starship.toml"
 set -gx WT_CONFIG "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 set -gx PS_CONFIG "$WIN_HOME/Documents/WindowsPowerShell"
+
+# Rust
+set -Ux RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # Bun
 set -Ux BUN_INSTALL "/home/wsl1/.bun"
@@ -27,6 +30,10 @@ set -Ux FNM_DIR "/home/wsl1/.local/share/fnm"
 set -Ux FNM_LOGLEVEL "info"
 set -Ux FNM_NODE_DIST_MIRROR "https://nodejs.org/dist"
 set -Ux FNM_ARCH "x64"
+
+# to run any graphical application via the terminal
+# fish way 'set -Ux' not working
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
 fish_add_path -g  "/mnt/wslg/runtime-dir/fnm_multishells/6478_1646493437206/bin"
 fish_add_path -g  "$HOME/.fnm"
@@ -165,8 +172,14 @@ alias ::dkit="z $WIN_HOME/OneDrive - Dundalk Institute of Technology"
 alias ::wy2="z $WIN_HOME/OneDrive - Dundalk Institute of Technology/year-2/semester-2"
 alias ::cellar="z /home/linuxbrew/.linuxbrew/Cellar"
 
-# termimage
-alias ::img='termimage'
+# image
+alias ::img1='termimage'
+alias ::img2='viu'
+alias ::img3='display'
+alias ::img4='img2txt'
+
+# git
+alias remote='brave (git config --get remote.origin.url)'
 
 #mysql
 alias mysql-start='sudo /etc/init.d/mysql start'
@@ -208,3 +221,6 @@ zoxide init fish | source
 starship init fish | source
 thefuck --alias | source
 fnm env | source
+
+set -gx PNPM_HOME "/home/wsl1/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH

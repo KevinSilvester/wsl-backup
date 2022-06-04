@@ -44,86 +44,87 @@ lvim.keys.normal_mode['<C-s>'] = ':w<cr>'
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, 'telescope.actions')
 lvim.builtin.telescope.defaults.mappings = {
-   -- for input mode
-   i = {
-      ['<C-j>'] = actions.move_selection_next,
-      ['<C-k>'] = actions.move_selection_previous,
-      ['<C-n>'] = actions.cycle_history_next,
-      ['<C-p>'] = actions.cycle_history_prev,
-   },
-   -- for normal mode
-   n = {
-      ['<C-j>'] = actions.move_selection_next,
-      ['<C-k>'] = actions.move_selection_previous,
-   },
+  -- for input mode
+  i = {
+    ['<C-j>'] = actions.move_selection_next,
+    ['<C-k>'] = actions.move_selection_previous,
+    ['<C-n>'] = actions.cycle_history_next,
+    ['<C-p>'] = actions.cycle_history_prev,
+  },
+  -- for normal mode
+  n = {
+    ['<C-j>'] = actions.move_selection_next,
+    ['<C-k>'] = actions.move_selection_previous,
+  },
 }
 
 lvim.builtin.cmp.mapping['<C-e>'] = function(fallback)
-   cmp.mapping.abort()
-   local copilot_keys = vim.fn['copilot#Accept']()
-   if copilot_keys ~= '' then
-      vim.api.nvim_feedkeys(copilot_keys, 'i', true)
-   else
-      fallback()
-   end
+  cmp.mapping.abort()
+  local copilot_keys = vim.fn['copilot#Accept']()
+  if copilot_keys ~= '' then
+    vim.api.nvim_feedkeys(copilot_keys, 'i', true)
+  else
+    fallback()
+  end
 end
 
 lvim.builtin.terminal.open_mapping = '<C-b>'
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings['t'] = {
-   name = '+Trouble',
-   r = { '<cmd>Trouble lsp_references<cr>', 'References' },
-   f = { '<cmd>Trouble lsp_definitions<cr>', 'Definitions' },
-   d = { '<cmd>Trouble lsp_document_diagnostics<cr>', 'Diagnostics' },
-   q = { '<cmd>Trouble quickfix<cr>', 'QuickFix' },
-   l = { '<cmd>Trouble loclist<cr>', 'LocationList' },
-   w = { '<cmd>Trouble lsp_workspace_diagnostics<cr>', 'Diagnostics' },
+  name = '+Trouble',
+  r = { '<cmd>Trouble lsp_references<cr>', 'References' },
+  f = { '<cmd>Trouble lsp_definitions<cr>', 'Definitions' },
+  d = { '<cmd>Trouble lsp_document_diagnostics<cr>', 'Diagnostics' },
+  q = { '<cmd>Trouble quickfix<cr>', 'QuickFix' },
+  l = { '<cmd>Trouble loclist<cr>', 'LocationList' },
+  w = { '<cmd>Trouble lsp_workspace_diagnostics<cr>', 'Diagnostics' },
 }
 
 lvim.builtin.which_key.mappings['C'] = {
-   name = '+Cmake Helper',
-   c = { '<cmd>TermExec cmd="ch --clear"<cr>', 'Clear Project' },
-   i = { '<cmd>TermExec cmd="ch --init"<cr>', 'Initialize' },
-   b = { '<cmd>TermExec cmd="ch --build && ch --run"<cr>', 'Build and Run' },
-   r = { '<cmd>TermExec cmd="ch --run"<cr>', 'Run' },
-   w = {
-      b = { '<cmd>TermExec cmd="ch win --build && ch win --run"<cr>', 'Build and Run Windows' },
-      r = { '<cmd>TermExec cmd="ch win --run"<cr>', 'Run Windows' },
-   }
+  name = '+Cmake Helper',
+  c = { '<cmd>TermExec cmd="ch --clear"<cr>', 'Clear Project' },
+  i = { '<cmd>TermExec cmd="ch --init"<cr>', 'Initialize' },
+  b = { '<cmd>TermExec cmd="ch --build && ch --run"<cr>', 'Build and Run' },
+  r = { '<cmd>TermExec cmd="ch --run"<cr>', 'Run' },
+  w = {
+    b = { '<cmd>TermExec cmd="ch win --build && ch win --run"<cr>', 'Build and Run Windows' },
+    r = { '<cmd>TermExec cmd="ch win --run"<cr>', 'Run Windows' },
+  }
 }
 lvim.builtin.which_key.mappings['n'] = {
-   name = '+NvimTree',
-   f = { '<cmd>NvimTreeFocus<cr>', 'Focus' },
-   r = { '<cmd>NvimTreeRefresh<cr>', 'Refresh' },
-   p = {
-      name = '+TreeMenu',
-      a = { '<cmd>!echo hello world<cr>', 'Echo' },
-   },
+  name = '+NvimTree',
+  f = { '<cmd>NvimTreeFocus<cr>', 'Focus' },
+  r = { '<cmd>NvimTreeRefresh<cr>', 'Refresh' },
+  p = {
+    name = '+TreeMenu',
+    a = { '<cmd>!echo hello world<cr>', 'Echo' },
+  },
 }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
+lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = 'left'
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-   'bash',
-   'c',
-   'javascript',
-   'json',
-   'lua',
-   'python',
-   'typescript',
-   'tsx',
-   'css',
-   'rust',
-   'java',
-   'yaml',
+  'bash',
+  'c',
+  'javascript',
+  'json',
+  'lua',
+  'python',
+  'typescript',
+  'tsx',
+  'css',
+  'rust',
+  'java',
+  'yaml',
 }
 
 lvim.builtin.treesitter.ignore_install = { 'haskell' }
@@ -139,48 +140,48 @@ lvim.builtin.treesitter.highlight.enabled = true
 vim.list_extend(lvim.lsp.override, { 'clangd', 'sqls', 'intelephense' })
 
 local clangd_flags = {
-   '--all-scopes-completion',
-   '--suggest-missing-includes',
-   '--background-index',
-   '--pch-storage=disk',
-   '--cross-file-rename',
-   '--log=info',
-   '--completion-style=detailed',
-   '--enable-config', -- clangd 11+ supports reading from .clangd configuration file
-   '--clang-tidy',
-   '--fallback-style=Google',
+  '--all-scopes-completion',
+  '--suggest-missing-includes',
+  '--background-index',
+  '--pch-storage=disk',
+  '--cross-file-rename',
+  '--log=info',
+  '--header-insertion=iwyu',
+  '--completion-style=detailed',
+  '--enable-config', -- clangd 11+ supports reading from .clangd configuration file
+  '--fallback-style=Google',
 }
 
 local clangd_bin = 'clangd-12'
 
 local clangd_opts = {
-   cmd = { clangd_bin, unpack(clangd_flags) },
-   on_attach = function(client, bufnr)
-      require('lvim.lsp').common_on_attach(client, bufnr)
-      local opts = { noremap = true, silent = true }
-      vim.api.nvim_buf_set_keymap(
-         bufnr,
-         'n',
-         '<leader>lh',
-         '<Cmd>ClangdSwitchSourceHeader<CR>',
-         opts
-      )
-   end,
+  cmd = { clangd_bin, unpack(clangd_flags) },
+  on_attach = function(client, bufnr)
+    require('lvim.lsp').common_on_attach(client, bufnr)
+    local opts = { noremap = true, silent = true }
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      'n',
+      '<leader>lh',
+      '<Cmd>ClangdSwitchSourceHeader<CR>',
+      opts
+    )
+  end,
 }
 
 require('lvim.lsp.manager').setup('clangd', clangd_opts)
 
 local sqls_opts = {
-   cmd = { 'sqls' },
-   -- on_attach = function(client, bufnr)
-   --    require('lvim.lsp').common_on_attach(client, bufnr)
-   -- end,
+  cmd = { 'sqls' },
+  -- on_attach = function(client, bufnr)
+  --    require('lvim.lsp').common_on_attach(client, bufnr)
+  -- end,
 }
 
 require('lvim.lsp.manager').setup('sqls', sqls_opts)
 
 require('lvim.lsp.manager').setup('tailwindcss', {
-   cmd = { 'tailwindcss-language-server' },
+  cmd = { 'tailwindcss-language-server' },
 })
 
 require('lvim.lsp.manager').setup('intelephense', {})
@@ -212,34 +213,34 @@ require('lvim.lsp.manager').setup('intelephense', {})
 ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
 local formatters = require('lvim.lsp.null-ls.formatters')
 formatters.setup({
-   {
-      command = 'prettier',
-      filetypes = {
-         'html',
-         'javascript',
-         'javascriptreact',
-         'json',
-         'markdown',
-         'svelte',
-         'typescript',
-         'typescriptreact',
-         'vue',
-         'yaml',
-      },
-   },
-   { exe = 'stylua', filetypes = { 'lua' } },
-   {
-      exe = 'blade-formatter',
-      filetypes = { 'php', 'blade' },
-      extra_args = {
-         '--write',
-         '--indent-size',
-         '3',
-         '--wrap-line-length',
-         '100',
-         '--sort-tailwindcss-classes',
-      },
-   },
+  {
+    command = 'prettier',
+    filetypes = {
+      'html',
+      'javascript',
+      'javascriptreact',
+      'json',
+      'markdown',
+      'svelte',
+      'typescript',
+      'typescriptreact',
+      'vue',
+      'yaml',
+    },
+  },
+  { exe = 'stylua', filetypes = { 'lua' } },
+  {
+    exe = 'blade-formatter',
+    filetypes = { 'php', 'blade' },
+    extra_args = {
+      '--write',
+      '--indent-size',
+      '3',
+      '--wrap-line-length',
+      '100',
+      '--sort-tailwindcss-classes',
+    },
+  },
 })
 
 -- -- set additional linters
@@ -264,50 +265,50 @@ lvim.builtin.dap.active = true
 
 -- Additional Plugins
 lvim.plugins = {
-   { 'folke/tokyonight.nvim' },
-   { 'rebelot/kanagawa.nvim' },
-   {
-      'folke/trouble.nvim',
-      cmd = 'TroubleToggle',
-   },
-   {
-      'iamcco/markdown-preview.nvim',
-      run = 'cd app && pnpm i',
-      ft = 'markdown',
-      config = function()
-         vim.g.mkdp_auto_start = 1
-      end,
-   },
-   {
-      'tpope/vim-surround',
-      keys = { 'c', 'd', 'y' },
-      config = function()
-         vim.cmd('nmap ds       <Plug>Dsurround')
-         vim.cmd('nmap cs       <Plug>Csurround')
-         vim.cmd('nmap cS       <Plug>CSurround')
-         vim.cmd('nmap ys       <Plug>Ysurround')
-         vim.cmd('nmap yS       <Plug>YSurround')
-         vim.cmd('nmap yss      <Plug>Yssurround')
-         vim.cmd('nmap ySs      <Plug>YSsurround')
-         vim.cmd('nmap ySS      <Plug>YSsurround')
-         vim.cmd('xmap gs       <Plug>VSurround')
-         vim.cmd('xmap gS       <Plug>VgSurround')
-      end,
-   },
-   { 'tpope/vim-fugitive' },
-   { 'catppuccin/nvim', as = 'catppuccin' },
-   -- { "nvim-lua/plenary.nvim" },
-   { 'Shatur/neovim-cmake' },
-   { 'ap/vim-css-color' },
-   {
-      'mg979/vim-visual-multi',
-      branch = 'master',
-   },
-   { 'nanotee/sqls.nvim' },
-   { 'mattn/emmet-vim' },
-   { 'scrooloose/nerdcommenter' },
-   { 'jwalton512/vim-blade' },
-   { 'github/copilot.vim' },
+  { 'folke/tokyonight.nvim' },
+  { 'rebelot/kanagawa.nvim' },
+  {
+    'folke/trouble.nvim',
+    cmd = 'TroubleToggle',
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && pnpm i',
+    ft = 'markdown',
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
+  {
+    'tpope/vim-surround',
+    keys = { 'c', 'd', 'y' },
+    config = function()
+      vim.cmd('nmap ds       <Plug>Dsurround')
+      vim.cmd('nmap cs       <Plug>Csurround')
+      vim.cmd('nmap cS       <Plug>CSurround')
+      vim.cmd('nmap ys       <Plug>Ysurround')
+      vim.cmd('nmap yS       <Plug>YSurround')
+      vim.cmd('nmap yss      <Plug>Yssurround')
+      vim.cmd('nmap ySs      <Plug>YSsurround')
+      vim.cmd('nmap ySS      <Plug>YSsurround')
+      vim.cmd('xmap gs       <Plug>VSurround')
+      vim.cmd('xmap gS       <Plug>VgSurround')
+    end,
+  },
+  -- { 'tpope/vim-fugitive' },
+  { 'catppuccin/nvim', as = 'catppuccin' },
+  -- { "nvim-lua/plenary.nvim" },
+  { 'Shatur/neovim-cmake' },
+  { 'ap/vim-css-color' },
+  {
+    'mg979/vim-visual-multi',
+    branch = 'master',
+  },
+  { 'nanotee/sqls.nvim' },
+  { 'mattn/emmet-vim' },
+  { 'scrooloose/nerdcommenter' },
+  { 'jwalton512/vim-blade' },
+  { 'github/copilot.vim' },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
