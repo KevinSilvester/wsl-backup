@@ -7,15 +7,16 @@ set -Ux C "/mnt/c"
 set -Ux WIN_HOME "$C/Users/kevin"
 set -Ux FZF_DEFAULT_OPS "--extended"
 set -Ux NVM_DIR "$HOME/.nvm"
-set -Ux GO_DIR "$HOME/.go"
-set -Ux GOROOT "/home/linuxbrew/.linuxbrew/bin/go"
-set -Ux GOPATH "$GOROOT/pkg"
-set -Ux GOBIN "$GOPATH/bin"
+set -Ux GOROOT "/usr/local/go"
+set -Ux GOPATH "$HOME/.go"
 set -Ux BROWSER brave.exe
 set -Ux EDITOR "lvim"
 set -gx STARSHIP_CONFIG "$ROOT/starship/starship.toml"
 set -gx WT_CONFIG "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 set -gx PS_CONFIG "$WIN_HOME/Documents/WindowsPowerShell"
+
+# Bird
+set -Ux BIRD_TREE $ROOT
 
 # Rust
 set -Ux RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -55,7 +56,7 @@ fish_add_path -g  "/mnt/c/msys64/mingw64/bin"
 fish_add_path -g  "$HOME/.emacs.d/bin"
 fish_add_path -g  "/mnt/c/WINDOWS/system32"
 fish_add_path -g  "/mnt/c/WINDOWS"
-fish_add_path -g  "$GO_DIR/go-1.17.5/bin"
+fish_add_path -g  "$GOROOT/bin"
 fish_add_path -g  "$GOPATH/bin"
 fish_add_path -g  "/mnt/c/Program Files/Java/jdk-11.0.2/bin"
 fish_add_path -g  "/home/linuxbrew/.linuxbrew/bin"

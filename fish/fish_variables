@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BIRD_TREE:/home/wsl1/__root__
 SETUVAR --export BROWSER:brave\x2eexe
 SETUVAR --export BUN_INSTALL:/home/wsl1/\x2ebun
 SETUVAR --export C:/mnt/c
@@ -14,9 +15,9 @@ SETUVAR --export --path FNM_MULTISHELL_PATH:/mnt/wslg/runtime\x2ddir/fnm_multish
 SETUVAR --export FNM_NODE_DIST_MIRROR:https\x3a//nodejs\x2eorg/dist
 SETUVAR --export FNM_VERSION_FILE_STRATEGY:local
 SETUVAR --export FZF_DEFAULT_OPS:\x2d\x2dextended
-SETUVAR --export GOBIN:/home/linuxbrew/\x2elinuxbrew/bin/go/pkg/bin
-SETUVAR --export --path GOPATH:/home/linuxbrew/\x2elinuxbrew/bin/go/pkg
-SETUVAR --export GOROOT:/home/linuxbrew/\x2elinuxbrew/bin/go
+SETUVAR --export GOBIN:/home/wsl1/go/bin
+SETUVAR --export --path GOPATH:/home/wsl1/\x2ego
+SETUVAR --export GOROOT:/usr/local/go
 SETUVAR --export GO_DIR:/home/wsl1/\x2ego
 SETUVAR --export NVM_DIR:/home/wsl1/\x2envm
 SETUVAR --export ROOT:/home/wsl1/__root__
