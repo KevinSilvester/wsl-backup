@@ -4,21 +4,21 @@
          "name": "homebrew",
          "preinstall": null,
          "install": [
-            "sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+            "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
          ],
          "update": ["brew update"],
          "uninstall": [
-            "sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh | bash"
+            "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh | bash"
          ],
          "dependencies": null
       },
       {
          "name": "gcc",
          "preinstall": null,
-         "install": ["sudo apt install -y build-essentials", "brew install gcc"],
+         "install": ["sudo apt install -y build-essential", "brew install gcc"],
          "update": ["brew update && brew upgrade gcc"],
          "uninstall": [
-            "sudo apt purge -y build-essentials",
+            "sudo apt purge -y build-essential",
             "sudo apt autoremove -y && sudo apt clean -y",
             "brew uninstall gcc"
          ],
@@ -27,8 +27,7 @@
       {
          "name": "llvm",
          "preinstall": [
-            "sudo apt-get install --reinstall python3-apt",
-            "sudo update-alternatives  --set python3  /usr/bin/python3.8"
+            "sudo apt-get install --reinstall python3 python3-apt",
          ],
          "install": [
             "rm -f /tmp/llvm.sh",
