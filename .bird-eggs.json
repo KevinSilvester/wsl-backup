@@ -311,6 +311,78 @@
          "update": ["brew update && brew upgrade sqls"],
          "uninstall": ["brew uninstall sqls"],
          "dependencies": ["homebrew"]
+      },
+      {
+         "name": "ncdu",
+         "preinstall": null,
+         "install": ["brew install ncdu"],
+         "update": ["brew update && brew upgrade ncdu"],
+         "uninstall": ["brew uninstall ncdu"], 
+         "dependencies": ["homebrew"]
+      },
+      {
+         "name": "neofetch",
+         "preinstall": null,
+         "install": ["brew install neofetch"],
+         "update": ["brew update && brew upgrade neofetch"],
+         "uninstall": ["brew uninstall neofetch"], 
+         "dependencies": ["homebrew"]
+      },
+      {
+         "name": "cmatrix",
+         "preinstall": null,
+         "install": ["brew install cmatrix"],
+         "update": ["brew update && brew upgrade cmatrix"],
+         "uninstall": ["brew uninstall cmatrix"], 
+         "dependencies": ["homebrew"]
+      },
+      {
+         "name": "hollywood",
+         "preinstall": null,
+         "install": ["sudo apt install -y hollywood"],
+         "update": null,
+         "uninstall": [
+            "sudo apt purge -y hollywood",
+            "sudo apt autoremove -y && sudo apt clean -y"
+         ],
+         "dependencies": null
+      },
+      {
+         "name": "sl",
+         "preinstall": null,
+         "install": ["sudo apt install -y sl"],
+         "update": null,
+         "uninstall": [
+            "sudo apt purge -y sl",
+            "sudo apt autoremove -y && sudo apt clean -y"
+         ],
+         "dependencies": null
+      },
+      {
+         "name": "mlocate",
+         "preinstall": null,
+         "install": [
+            "sudo apt install -y mlocate",
+            "sed '3d' /etc/updatedb.conf | sudo tee -a /etc/updatedb.conf.tmp >/dev/null",
+            "echo \"PRUNEPATHS=\\\"$(cat /etc/updatedb.conf | tail -2 | awk -F= '$1 == \"PRUNEPATHS\" {print $2}' | sd \\\" '') /mnt/c\\\"\" | sudo tee -a /etc/updatedb.conf.tmp >/dev/null",
+            "sudo mv /etc/updatedb.conf /etc/updatedb.conf.bak",
+            "sudo mv /etc/updatedb.conf.tmp /etc/updatedb.conf",
+            "sudo updatedb"
+         ],
+         "update": null,
+         "uninstall": [
+            "sudo apt purge -y mlocate",
+            "sudo apt autoremove -y && sudo apt clean -y"
+         ],
+         "dependencies": ["sd"]
+      },
+      {
+         "name": "termimage",
+         "preinstall": null,
+         "install": ["cargo install termimage"],
+         "update": ["cargo install termimage"],
+         "uninstall": ["cargo uninstall termimage"], 
+         "dependencies": ["rust"]
       }
    ]
 }
