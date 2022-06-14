@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export BIRD_TREE:/home/wsl1/__root__
+SETUVAR --export BIRD_TREE:/home/kevin/_root
 SETUVAR --export BROWSER:brave\x2eexe
 SETUVAR --export BUN_INSTALL:/home/wsl1/\x2ebun
 SETUVAR --export C:/mnt/c
@@ -11,22 +11,22 @@ SETUVAR --export EXA_COLORS:ga\x3d38\x3b5\x3b48\x3agm\x3d38\x3b5\x3b221\x3agv\x3
 SETUVAR --export FNM_ARCH:x64
 SETUVAR --export FNM_DIR:/home/wsl1/\x2elocal/share/fnm
 SETUVAR --export FNM_LOGLEVEL:info
-SETUVAR --export --path FNM_MULTISHELL_PATH:/mnt/wslg/runtime\x2ddir/fnm_multishells/6478_1646493437206
+SETUVAR --export --path FNM_MULTISHELL_PATH:/mnt/wslg/runtime\x2ddir/fnm_multishells/5578_1655220816432
 SETUVAR --export FNM_NODE_DIST_MIRROR:https\x3a//nodejs\x2eorg/dist
 SETUVAR --export FNM_VERSION_FILE_STRATEGY:local
 SETUVAR --export FZF_DEFAULT_OPS:\x2d\x2dextended
 SETUVAR --export GOBIN:/home/wsl1/go/bin
-SETUVAR --export --path GOPATH:/home/wsl1/\x2ego
+SETUVAR --export --path GOPATH:/home/kevin/\x2ego
 SETUVAR --export GOROOT:/usr/local/go
 SETUVAR --export GO_DIR:/home/wsl1/\x2ego
-SETUVAR --export NVM_DIR:/home/wsl1/\x2envm
-SETUVAR --export ROOT:/home/wsl1/__root__
-SETUVAR --export --path RUST_SRC_PATH:/home/wsl1/\x2erustup/toolchains/stable\x2dx86_64\x2dunknown\x2dlinux\x2dgnu/lib/rustlib/src/rust/src
+SETUVAR --export NVM_DIR:/home/kevin/\x2envm
+SETUVAR --export ROOT:/home/kevin/_root
+SETUVAR --export --path RUST_SRC_PATH:/home/kevin/\x2erustup/toolchains/stable\x2dx86_64\x2dunknown\x2dlinux\x2dgnu/lib/rustlib/src/rust/src
 SETUVAR --export STARSHIP_CONFIG:/home/wsl1/__root__/starship/starship\x2etoml
 SETUVAR --export TERM:xterm\x2d256color
 SETUVAR --export WIN_HOME:/mnt/c/Users/kevin
 SETUVAR --export WT_CONFIG:/mnt/c/Users/kevin/AppData/Local/Packages/Microsoft\x2eWindowsTerminal_8wekyb3d8bbwe/LocalState
-SETUVAR --export ZSH:/home/wsl1/\x2eoh\x2dmy\x2dzsh
+SETUVAR --export ZSH:/home/kevin/\x2eoh\x2dmy\x2dzsh
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/home/wsl1/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/home/wsl1/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/home/wsl1/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/home/wsl1/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_edc_2F_bass_files:/home/wsl1/\x2econfig/fish/functions/__bass\x2epy\x1e/home/wsl1/\x2econfig/fish/functions/bass\x2efish

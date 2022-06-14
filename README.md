@@ -1,9 +1,4 @@
-# **WSL Backup**
-
-## **Content**
-- [Essentials](#essentials)
-- [ZSH](#zsh)
-- [mlocate](#mlocate)
+# **WSL Backup** ## **Content** [Essentials](#essentials) [ZSH](#zsh) [mlocate](#mlocate)
 - [NodeJS](#nodejs)
 - [Rust and Python](#rust-and-python)
 - [Dotfiles](#dotfiles)
@@ -44,25 +39,25 @@ git clone https://github.com/KevinSilvester/wsl-backup.git __root__
 ## **ZSH**
 #### **[ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)**
 ```zsh
-cd $HOME/__root__/zsh
+cd $ROOT/zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
 #### **[ZSH Autocompletion](https://github.com/zsh-users/zsh-autosuggestions)**
 ```zsh
-cd $HOME/__root__/zsh
+cd $ROOT/zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
 
 #### **[k](https://github.com/supercrabtree/k)**
 ```zsh
-cd $HOME/__root__/zsh
+cd $ROOT/zsh
 git clone https://github.com/supercrabtree/k.git
 ```
 
 #### **[extract](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/extract.plugin.zsh)**
 ```zsh
-cd $HOME/__root__/zsh
+cd $ROOT/zsh
 mkdir extract
 cd extract
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/extract.plugin.zsh
@@ -70,7 +65,7 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/ex
 
 #### **[colorize](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colorize/colorize.plugin.zsh)**
 ```zsh
-cd $HOME/__root__/zsh
+cd $ROOT/zsh
 mkdir colorize
 cd colorize
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colorize/colorize.plugin.zsh
@@ -78,7 +73,7 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colorize/c
 
 #### **ZSH Custom Theme**
 ```zsh
-ln -s $HOME/__root__/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushed.zsh-theme
+ln -s $ROOT/zsh/smushed.zsh-theme $HOME/.oh-my-zsh/custom/themes/smushed.zsh-theme
 ```
 > Based on default Robby Russel theme and Passion theme <https://github.com/ChesterYue/ohmyzsh-theme-passion>
 
@@ -133,13 +128,13 @@ cd $HOME
 rm .zshrc .zshenv .zprofile .bashrc .bash_profile .gitconfig .nanorc
 
 # replace with new config
-ln -s $HOME/__root__/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/__root__/dotfiles/.zshenv $HOME/.zshenv
-ln -s $HOME/__root__/dotfiles/.zprofile $HOME/.zprofile
-ln -s $HOME/__root__/dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/__root__/dotfiles/.bash_profile $HOME/.bash_profile
-ln -s $HOME/__root__/dotfiles/.gitconfig $HOME/.gitconfig
-ln -s $HOME/__root__/dotfiles/.nanorc $HOME/.nanorc
+ln -s $ROOT/dotfiles/.zshrc $HOME/.zshrc
+ln -s $ROOT/dotfiles/.zshenv $HOME/.zshenv
+ln -s $ROOT/dotfiles/.zprofile $HOME/.zprofile
+ln -s $ROOT/dotfiles/.bashrc $HOME/.bashrc
+ln -s $ROOT/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $ROOT/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $ROOT/dotfiles/.nanorc $HOME/.nanorc
 
 
 ```
