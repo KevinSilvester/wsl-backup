@@ -2,18 +2,20 @@
 
 set -Ux TERM "xterm-256color"
 set -Ux ZSH "$HOME/.oh-my-zsh"
-set -Ux ROOT "$HOME/__root__"
+set -Ux ROOT "$HOME/_root"
 set -Ux C "/mnt/c"
 set -Ux WIN_HOME "$C/Users/kevin"
 set -Ux FZF_DEFAULT_OPS "--extended"
 set -Ux NVM_DIR "$HOME/.nvm"
-set -Ux GOROOT "/usr/local/go"
-set -Ux GOPATH "$HOME/.go"
 set -Ux BROWSER brave.exe
 set -Ux EDITOR "lvim"
 set -gx STARSHIP_CONFIG "$ROOT/starship/starship.toml"
 set -gx WT_CONFIG "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 set -gx PS_CONFIG "$WIN_HOME/Documents/WindowsPowerShell"
+
+# Go
+set -Ux GOROOT "/usr/local/go"
+set -Ux GOPATH "$HOME/.go"
 
 # Bird
 set -Ux BIRD_TREE $ROOT
@@ -25,18 +27,23 @@ set -Ux RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set -Ux BUN_INSTALL "/home/wsl1/.bun"
 
 # fnm
-set -Ux FNM_MULTISHELL_PATH "/mnt/wslg/runtime-dir/fnm_multishells/6478_1646493437206"
+set -Ux FNM_MULTISHELL_PATH "/mnt/wslg/runtime-dir/fnm_multishells/5578_1655220816432"
 set -Ux FNM_VERSION_FILE_STRATEGY "local"
 set -Ux FNM_DIR "/home/wsl1/.local/share/fnm"
 set -Ux FNM_LOGLEVEL "info"
 set -Ux FNM_NODE_DIST_MIRROR "https://nodejs.org/dist"
 set -Ux FNM_ARCH "x64"
 
+# Homebrew
+set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
+set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
+set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew"
+
 # to run any graphical application via the terminal
 # fish way 'set -Ux' not working
 # export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
-fish_add_path -g  "/mnt/wslg/runtime-dir/fnm_multishells/6478_1646493437206/bin"
+fish_add_path -g  "$FNM_MULTISHELL_PATH/bin"
 fish_add_path -g  "$HOME/.fnm"
 fish_add_path -g  "$HOME/.bun/bin"
 fish_add_path -g  "$HOME/.cargo/bin"
@@ -59,7 +66,7 @@ fish_add_path -g  "/mnt/c/WINDOWS"
 fish_add_path -g  "$GOROOT/bin"
 fish_add_path -g  "$GOPATH/bin"
 fish_add_path -g  "/mnt/c/Program Files/Java/jdk-11.0.2/bin"
-fish_add_path -g  "/home/linuxbrew/.linuxbrew/bin"
+fish_add_path -g  "$HOMEBREW_PREFIX/bin"
 
 set -Ux EXA_COLORS 'ga=38;5;48:gm=38;5;221:gv=38;5;223:gd=38;5;160:gt=38;5;140:da=38;5;145:sn=38;5;189:sb=38;5;189:uw=38;5;189:gw=38;5;189:tw=38;5;189:ur=38;5;189:gr=38;5;189:tr=38;5;189:ux=38;5;189:ue=38;5;189:gx=38;5;189:tx=38;5;189:'
 
