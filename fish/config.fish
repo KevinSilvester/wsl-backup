@@ -165,8 +165,8 @@ alias ch='_cmake_helper'
 alias wmake='/mnt/c/Users/kevin/scoop/apps/make/current/bin/make.exe'
 
 # zoxide
-alias ::root='z ~/__root__'
-alias ::edit-root='code ~/__root__'
+alias ::root='z $ROOT'
+alias ::edit-root='code $ROOT'
 alias ::y2='z ~/year-2'
 alias ::c="z $C"
 alias ::win-home="z $WIN_HOME"

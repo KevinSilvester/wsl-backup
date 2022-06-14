@@ -48,6 +48,14 @@
          "dependencies": ["homebrew"]
       },
       {
+         "name": "gh",
+         "preinstall": null,
+         "install": ["brew install gh"],
+         "update": ["brew update && brew upgrade gh"],
+         "uninstall": ["brew uninstall gh"],
+         "dependencies": ["homebrew"]
+      },
+      {
          "name": "rust",
          "preinstall": null,
          "install": ["curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"],
