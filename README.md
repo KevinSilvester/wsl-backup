@@ -1,4 +1,6 @@
-# **WSL Backup** ## **Content** [Essentials](#essentials) [ZSH](#zsh) [mlocate](#mlocate)
+# **WSL Backup**
+
+## **Content** [Essentials](#essentials) [ZSH](#zsh) [mlocate](#mlocate)
 - [NodeJS](#nodejs)
 - [Rust and Python](#rust-and-python)
 - [Dotfiles](#dotfiles)
