@@ -1,0 +1,545 @@
+{
+   "eggs": [
+    {
+      "name": "nala",
+      "preinstall": [
+         "echo 'deb http://deb.volian.org/volian/ scar main' | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list",
+         "wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null",
+         "sudo apt update"
+      ],
+      "install": ["sudo apt install -y nala-legacy"],
+      "update": null,
+      "uninstall": ["sudo apt purge -y nala-legacy"]
+    },
+    {
+      "name": "fish",
+      "preinstall": [
+          "sudo apt-add-repository ppa:fish-shell/release-3",
+          "sudo nala update -y && sudo nala upgrade -y"
+      ],
+      "install": ["sudo nala install -y fish"],
+      "update": null,
+      "uninstall": [
+          "sudo nala purge -y fish",
+          "sudo nala autoremove -y && sudo nala clean -y"
+      ],
+      "dependencies": ["nala"]
+    },
+    {
+       "name": "homebrew",
+       "preinstall": null,
+       "install": [
+          "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+       ],
+       "update": ["brew update"],
+       "uninstall": [
+          "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh | bash"
+       ],
+       "dependencies": null
+    },
+    {
+       "name": "hello",
+       "preinstall": null,
+       "install": ["brew install hello"],
+       "update": ["brew update && brew upgrade hello"],
+       "uninstall": ["brew uninstall hello"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "gcc",
+       "preinstall": null,
+       "install": ["sudo nala install -y build-essential", "brew install gcc"],
+       "update": ["brew update && brew upgrade gcc"],
+       "uninstall": [
+          "sudo nala purge -y build-essential",
+          "sudo nala autoremove -y && sudo apt clean -y",
+          "brew uninstall gcc"
+       ],
+       "dependencies": ["homebrew", "nala"]
+    },
+    {
+       "name": "llvm",
+       "preinstall": [
+          "sudo nala install --reinstall python3 python3-apt"
+       ],
+       "install": [
+          "rm -f /tmp/llvm.sh",
+          "wget -P /tmp/ https://apt.llvm.org/llvm.sh",
+          "chmod +x /tmp/llvm.sh",
+          "sudo /tmp/llvm.sh all"
+       ],
+       "update": null,
+       "uninstall": ["curl https://pastebin.com/raw/T37pDnbb | fish"],
+       "dependencies": ["fish", "nala"]
+    },
+    {
+       "name": "cmake",
+       "preinstall": null,
+       "install": ["brew install cmake"],
+       "update": ["brew update && brew upgrade cmake"],
+       "uninstall": ["brew uninstall cmake"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "gh",
+       "preinstall": null,
+       "install": ["brew install gh"],
+       "update": ["brew update && brew upgrade gh"],
+       "uninstall": ["brew uninstall gh"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "rust",
+       "preinstall": null,
+       "install": ["curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"],
+       "update": ["rustup update"],
+       "uninstall": ["rustup self uninstall"],
+       "dependencies": null
+    },
+    {
+       "name": "php",
+       "preinstall": [
+          "sudo nala install -y software-properties-common libapache2-mod-php",
+          "sudo add-apt-repository ppa:ondrej/php",
+          "sudo nala update -y && sudo apt upgrade -y"
+       ],
+       "install": ["curl -s https://pastebin.com/raw/Jygny5R7 | fish"],
+       "update": null,
+       "uninstall": ["curl -s https://pastebin.com/raw/GskaaD9c | fish"],
+       "dependencies": ["fish", "nala"]
+    },
+    {
+       "name": "composer",
+       "preinstall": ["sudo nala install -y unzip"],
+       "install": ["curl https://pastebin.com/raw/6eDf33cJ | fish"],
+       "update": ["curl https://pastebin.com/raw/6eDf33cJ | fish"],
+       "uninstall": ["sudo /usr/local/bin/composer"],
+       "dependencies": ["php", "fish", "nala"]
+    },
+    {
+       "name": "go",
+       "preinstall": null,
+       "install": ["curl https://pastebin.com/raw/xd5JHjra | fish"],
+       "update": ["curl https://pastebin.com/raw/xd5JHjra | fish"],
+       "uninstall": ["sudo rm -rf /usr/local/go"],
+       "dependencies": ["jq", "fish"]
+    },
+    {
+       "name": "java",
+       "preinstall": null,
+       "install": ["sudo nala install -y openjdk-11-jdk", "sudo nala install -y openjdk-11-jre"],
+       "update": null,
+       "uninstall": [
+          "sudo nala purge -y openjdk-11-jdk",
+          "sudo nala purge -y openjdk-11-jre",
+          "sudo nala autoremove -y && sudo apt clean -y"
+       ],
+       "dependencies": ["nala"]
+    },
+    {
+       "name": "mysql",
+       "preinstall": null,
+       "install": ["sudo nala install -y mysql-server"],
+       "update": null,
+       "uninstall": [
+          "sudo nala purge -y mysql-server",
+          "sudo nala autoremove -y && sudo apt clean -y"
+       ],
+       "dependencies": ["nala"]
+    },
+    {
+       "name": "fnm",
+       "preinstall": null,
+       "install": ["brew install fnm"],
+       "update": ["brew update && brew upgrade fnm"],
+       "uninstall": ["brew uninstall fnm"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "node",
+       "preinstall": null,
+       "install": [
+          "fnm install --lts",
+          "fnm use (fnm list | awk '$3 == \"lts-latest,\" || $3 == \"lts-latest\" {print $2}' | string sub -s 2)"
+       ],
+       "update": [
+          "fnm install --lts",
+          "fnm use (fnm list | awk '$3 == \"lts-latest,\" || $3 == \"lts-latest\" {print $2}' | string sub -s 2)"
+       ],
+       "uninstall": [
+          "fnm uninstall (fnm list | awk '$3 == \"default\" || $4 == \"default\" {print $2}' | string sub -s 2)"
+       ],
+       "dependencies": ["fnm"]
+    },
+    {
+       "name": "jq",
+       "preinstall": null,
+       "install": ["brew install jq"],
+       "update": ["brew update && brew upgrade jq"],
+       "uninstall": ["brew uninstall jq"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "nvim",
+       "preinstall": null,
+       "install": ["brew install neovim"],
+       "update": ["brew update && brew upgrade neovim"],
+       "uninstall": ["brew uninstall neovim"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "lvim",
+       "preinstall": null,
+       "install": [
+          "bash -c \"bash <(curl https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)\""
+       ],
+       "update": null,
+       "uninstall": [
+          "curl https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.sh | bash"
+       ],
+       "dependencies": ["nvim"]
+    },
+    {
+       "name": "emacs",
+       "preinstall": ["sudo nala purge -y emacs && sudo nala autoremove -y"],
+       "install": ["brew install emacs"],
+       "update": ["brew update && brew upgrade emacs"],
+       "uninstall": ["brew uninstall emacs"],
+       "dependencies": ["homebrew", "nala"]
+    },
+    {
+       "name": "doomemacs",
+       "preinstall": null,
+       "install": [
+          "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d",
+          "~/.emacs.d/bin/doom install"
+       ],
+       "update": ["doom upgrade"],
+       "uninstall": ["rm -rf ~/.emacs.d ~/.doom.d"],
+       "dependencies": ["emacs", "ripgrep", "fd"]
+    },
+    {
+       "name": "dust",
+       "preinstall": null,
+       "install": ["brew tap tgotwig/linux-dust && brew install dust"],
+       "update": ["brew update && brew upgrade dust"],
+       "uninstall": ["brew uninstall dust"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "ripgrep",
+       "preinstall": null,
+       "install": ["brew install ripgrep"],
+       "update": ["brew update && brew upgrade ripgrep"],
+       "uninstall": ["brew uninstall ripgrep"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "fd",
+       "preinstall": null,
+       "install": ["brew install fd"],
+       "update": ["brew update && brew upgrade fd"],
+       "uninstall": ["brew uninstall fd"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "fzf",
+       "preinstall": null,
+       "install": ["brew install fzf"],
+       "update": ["brew update && brew upgrade fzf"],
+       "uninstall": ["brew uninstall fzf"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "zoxide",
+       "preinstall": null,
+       "install": ["brew install zoxide"],
+       "update": ["brew update && brew upgrade zoxide"],
+       "uninstall": ["brew uninstall zoxide"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "bat",
+       "preinstall": null,
+       "install": ["brew install bat"],
+       "update": ["brew update && brew upgrade bat"],
+       "uninstall": ["brew uninstall bat"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "starship",
+       "preinstall": null,
+       "install": ["brew install starship"],
+       "update": ["brew update && brew upgrade starship"],
+       "uninstall": ["brew uninstall starship"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "exa",
+       "preinstall": null,
+       "install": ["brew install exa"],
+       "update": ["brew update && brew upgrade exa"],
+       "uninstall": ["brew uninstall exa"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "thefuck",
+       "preinstall": null,
+       "install": ["brew install thefuck"],
+       "update": ["brew update && brew upgrade thefuck"],
+       "uninstall": ["brew uninstall thefuck"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "eva",
+       "preinstall": null,
+       "install": ["brew install eva"],
+       "update": ["brew update && brew upgrade eva"],
+       "uninstall": ["brew uninstall eva"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "sd",
+       "preinstall": null,
+       "install": ["brew install sd"],
+       "update": ["brew update && brew upgrade sd"],
+       "uninstall": ["brew uninstall sd"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "tokei",
+       "preinstall": null,
+       "install": ["brew install tokei"],
+       "update": ["brew update && brew upgrade tokei"],
+       "uninstall": ["brew uninstall tokei"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "yq",
+       "preinstall": null,
+       "install": ["brew install yq"],
+       "update": ["brew update && brew upgrade yq"],
+       "uninstall": ["brew uninstall yq"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "viu",
+       "preinstall": null,
+       "install": ["brew install viu"],
+       "update": ["brew update && brew upgrade viu"],
+       "uninstall": ["brew uninstall viu"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "stylua",
+       "preinstall": null,
+       "install": ["brew install stylua"],
+       "update": ["brew update && brew upgrade stylua"],
+       "uninstall": ["brew uninstall stylua"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "btop",
+       "preinstall": null,
+       "install": ["brew install btop"],
+       "update": ["brew update && brew upgrade btop"],
+       "uninstall": ["brew uninstall btop"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "sqls",
+       "preinstall": null,
+       "install": ["brew install sqls"],
+       "update": ["brew update && brew upgrade sqls"],
+       "uninstall": ["brew uninstall sqls"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "ncdu",
+       "preinstall": null,
+       "install": ["brew install ncdu"],
+       "update": ["brew update && brew upgrade ncdu"],
+       "uninstall": ["brew uninstall ncdu"], 
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "neofetch",
+       "preinstall": null,
+       "install": ["brew install neofetch"],
+       "update": ["brew update && brew upgrade neofetch"],
+       "uninstall": ["brew uninstall neofetch"], 
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "cmatrix",
+       "preinstall": null,
+       "install": ["brew install cmatrix"],
+       "update": ["brew update && brew upgrade cmatrix"],
+       "uninstall": ["brew uninstall cmatrix"], 
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "hollywood",
+       "preinstall": null,
+       "install": ["sudo nala install -y hollywood"],
+       "update": null,
+       "uninstall": [
+          "sudo nala purge -y hollywood",
+          "sudo nala autoremove -y && sudo nala clean -y"
+       ],
+       "dependencies": ["nala"]
+    },
+    {
+       "name": "sl",
+       "preinstall": null,
+       "install": ["sudo nala install -y sl"],
+       "update": null,
+       "uninstall": [
+          "sudo nala purge -y sl",
+          "sudo nala autoremove -y && sudo nala clean -y"
+       ],
+       "dependencies": ["nala"]
+    },
+    {
+       "name": "mlocate",
+       "preinstall": null,
+       "install": [
+          "sudo nala install -y mlocate",
+          "sed '3d' /etc/updatedb.conf | sudo tee -a /etc/updatedb.conf.tmp >/dev/null",
+          "echo \"PRUNEPATHS=\\\"$(cat /etc/updatedb.conf | tail -2 | awk -F= '$1 == \"PRUNEPATHS\" {print $2}' | sd \\\" '') /mnt/c\\\"\" | sudo tee -a /etc/updatedb.conf.tmp >/dev/null",
+          "sudo mv /etc/updatedb.conf /etc/updatedb.conf.bak",
+          "sudo mv /etc/updatedb.conf.tmp /etc/updatedb.conf",
+          "sudo updatedb"
+       ],
+       "update": null,
+       "uninstall": [
+          "sudo nala purge -y mlocate",
+          "sudo nala autoremove -y && sudo nala clean -y"
+       ],
+       "dependencies": ["sd", "nala"]
+    },
+    {
+       "name": "termimage",
+       "preinstall": null,
+       "install": ["cargo install termimage"],
+       "update": ["cargo install termimage"],
+       "uninstall": ["cargo uninstall termimage"], 
+       "dependencies": ["rust"]
+    },
+    {
+      "name": "speedtest",
+      "preinstall": null,
+      "install": ["brew install speedtest-cli"],
+      "update": ["brew update && brew upgrade speedtest-cli"],
+      "uninstall": ["brew uninstall speedtest-cli"],
+      "dependencies": ["homebrew"]
+    },
+    {
+      "name": "pnpm",
+      "preinstall": null,
+      "install": ["npm i --location=global pnpm"],
+      "update": ["pnpm add -g pnpm"],
+      "uninstall": ["pnpm remove -g pnpm && npm uninstall --location=global pnpm"],
+      "dependencies": ["node"]
+    },
+    {
+      "name": "prettier",
+      "preinstall": null,
+      "install": ["npm i --location=global prettier"],
+      "update": ["npm i --location=global prettier"],
+      "uninstall": ["npm uninstall --location=global prettier"],
+      "dependencies": ["node"]
+    },
+    {
+      "name": "yarn",
+      "preinstall": null,
+      "install": ["pnpm add -g yarn"],
+      "update": ["pnpm add -g yarn"],
+      "uninstall": ["pnpm remove -g yarn"],
+      "dependencies": ["pnpm"]
+    },
+    {
+      "name": "serve",
+      "preinstall": null,
+      "install": ["pnpm add -g serve"],
+      "update": ["pnpm add -g serve"],
+      "uninstall": ["pnpm remove -g serve"],
+      "dependencies": ["pnpm"]
+    },
+    {
+      "name": "dummy1",
+      "preinstall": ["echo dummy1 preinstall"],
+      "install": ["echo dummy1 install"],
+      "update": ["echo dummy1 update"],
+      "uninstall": ["echo dummy1 uninstall"],
+      "dependencies": null
+    },
+    {
+      "name": "dummy2",
+      "preinstall": ["echo dummy2 preinstall"],
+      "install": ["echo dummy2 install"],
+      "update": ["echo dummy2 update"],
+      "uninstall": ["echo dummy2 uninstall"],
+      "dependencies": ["dummy1"]
+    },
+    {
+      "name": "dummy3",
+      "preinstall": ["echo dummy3 preinstall"],
+      "install": ["echo dummy3 install"],
+      "update": ["echo dummy3 update"],
+      "uninstall": ["echo dummy3 uninstall"],
+      "dependencies": ["dummy1", "dummy2"]
+    },
+    {
+      "name": "bun",
+      "preinstall": null,
+      "install": ["curl https://bun.sh/install | bash"],
+      "update": ["bun upgrade"],
+      "uninstall": ["rm -r ~/.bun"],
+      "dependencies": null
+    },
+    {
+      "name": "net-tools",
+      "preinstall": null,
+      "install": ["sudo nala install net-tools"],
+      "update": null,
+      "uninstall": [
+          "sudo nala purge -y net-tools",
+          "sudo nala autoremove -y && sudo nala clean -y"
+       ],
+      "dependencies": ["nala"]
+    },
+    {
+      "name": "git",
+      "preinstall": null,
+      "install": ["echo hello"],
+      "update": ["brew update && brew upgrade git"],
+      "uninstall": ["brew uninstall git"],
+      "dependencies": ["homebrew"]
+    },
+    {
+       "name": "dasel",
+       "preinstall": null,
+       "install": ["brew install dasel"],
+       "update": ["brew update && brew upgrade dasel"],
+       "uninstall": ["brew uninstall dasel"],
+       "dependencies": ["homebrew"]
+    },
+    {
+       "name": "cross",
+       "preinstall": null,
+       "install": ["cargo install cross --git https://github.com/cross-rs/cross"],
+       "update": ["cargo install cross --git https://github.com/cross-rs/cross"],
+       "uninstall": ["cargo uninstall termimage"], 
+       "dependencies": ["rust"]
+    },
+    {
+       "name": "docker",
+       "preinstall": null,
+       "install": ["brew install docker docker-machine"],
+       "update": ["brew update && brew upgrade docker docker-machine"],
+       "uninstall": ["brew uninstall docker docker-machine"],
+       "dependencies": ["homebrew"]
+    }
+  ]
+}
