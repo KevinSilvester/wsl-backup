@@ -1,0 +1,3 @@
+[submodule "shell-color-scripts"]
+	path = shell-color-scripts
+	url = git@github.com:KevinSilvester/shell-color-scripts.git
