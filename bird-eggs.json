@@ -59,18 +59,16 @@
     },
     {
        "name": "llvm",
-       "preinstall": [
-          "sudo nala install --reinstall python3 python3-apt"
-       ],
        "install": [
           "rm -f /tmp/llvm.sh",
           "wget -P /tmp/ https://apt.llvm.org/llvm.sh",
           "chmod +x /tmp/llvm.sh",
+          "sd 'apt-get' 'nala' /tmp/llvm.sh",
           "sudo /tmp/llvm.sh all"
        ],
        "update": null,
        "uninstall": ["curl https://pastebin.com/raw/T37pDnbb | fish"],
-       "dependencies": ["fish", "nala"]
+       "dependencies": ["fish", "nala", "sd"]
     },
     {
        "name": "cmake",
@@ -143,7 +141,8 @@
        "update": null,
        "uninstall": [
           "sudo nala purge -y mysql-server",
-          "sudo nala autoremove -y && sudo apt clean -y"
+          "sudo nala autoremove -y && sudo apt clean -y",
+          "sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql"
        ],
        "dependencies": ["nala"]
     },

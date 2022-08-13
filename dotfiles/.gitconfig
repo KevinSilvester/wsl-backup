@@ -1,8 +1,11 @@
 [user]
 	email = kevinsilvester05@gmail.com
 	name = Kevin Silvester
+	signingkey = 32AB85943DFA03E2
 [credential "https://github.com"]
 	helper = 
 	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
 [core]
-	editor = lvim --wait
+	editor = lvim
+[commit]
+	gpgsign = true

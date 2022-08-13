@@ -13,7 +13,7 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 . "$HOME/.cargo/env"
 
 export ZSH="$HOME/.oh-my-zsh"
-export ROOT="$HOME/__root__"
+export ROOT="$HOME/_root"
 export C="/mnt/c"
 
 export FZF_DEFAULT_OPS="--extended"
