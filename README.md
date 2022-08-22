@@ -42,7 +42,7 @@ scoop install wget vcxsrv
 if (-Not (Test-Path -Path "$env:HOMEPATH\scripts")) { mkdir "$env:HOMEPATH\scripts" }
 
 # Download the batch file
-wget -O "$env:HOMEPATH\scripts\wsl-x11.bat" "https://gist.githubusercontent.com/KevinSilvester/bf6596393dac89a15ab2b3e0fd40acc9/raw/66cc2e92312439a287677a881bf23291fc1e4746/wsl-x11.bat"
+wget -O "$env:HOMEPATH\scripts\wsl-x11.bat" "https://gist.githubusercontent.com/KevinSilvester/bf6596393dac89a15ab2b3e0fd40acc9/raw/2d74e44ee06d5de6b20094e3d4f3898ca040f2bb/wsl-x11.bat"
 
 # Download the powershell script
 wget -O "$env:HOMEPATH\scripts\wsl-x11.ps1" "https://gist.githubusercontent.com/KevinSilvester/2976fc9bcbb716b1731ebb26af403580/raw/e69464b8df58485594e61baa2524dcc6784856c0/wsl-x11.ps1"
