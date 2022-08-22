@@ -2,7 +2,7 @@
 
 if status is-interactive
    set -gx ZSH                 "$HOME/.oh-my-zsh"
-   set -gx ROOT                "$HOME/_root"
+   set -gx ROOT                "$HOME/.config"
    set -gx C                   "/mnt/c"
    set -gx WIN_HOME            "$C/Users/kevin"
    set -gx NVM_DIR             "$HOME/.nvm"
