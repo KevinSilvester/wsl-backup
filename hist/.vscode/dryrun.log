@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/wsl1/__root__/i-hist'
-cargo build --release 
-cp ./target/release/installer-hist /home/wsl1/.local/bin/i-hist
-make: Leaving directory '/home/wsl1/__root__/i-hist'
- 

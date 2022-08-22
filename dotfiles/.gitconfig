@@ -8,3 +8,5 @@
 	editor = nvim
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master
