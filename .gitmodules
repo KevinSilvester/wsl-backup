@@ -1,9 +1,6 @@
 [submodule "shell-color-scripts"]
 	path = shell-color-scripts
 	url = git@github.com:KevinSilvester/shell-color-scripts.git
-[submodule "nvim"]
-	path = nvim
-	url = git@github.com:KevinSilvester/nvim-config.git
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
