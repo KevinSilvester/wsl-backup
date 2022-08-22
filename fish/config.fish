@@ -30,8 +30,8 @@ if status is-interactive
    set -gx GOPATH "$HOME/.go"
 
    # Bird
-   set -gx BIRD_EGGS "$ROOT/bird-eggs.json"
-   set -gx BIRD_NEST "$ROOT/bird-nest.json"
+   set -gx BIRD_EGGS "$ROOT/bird/bird-eggs.json"
+   set -gx BIRD_NEST "$ROOT/bird/bird-nest.json"
    set -gx BIRD_SHELL fish
 
    # Bun
