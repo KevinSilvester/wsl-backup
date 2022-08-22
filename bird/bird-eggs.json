@@ -531,14 +531,25 @@
        "update": ["cargo install cross --git https://github.com/cross-rs/cross"],
        "uninstall": ["cargo uninstall termimage"], 
        "dependencies": ["rust"]
-    },
-    {
+   },
+   {
        "name": "docker",
        "preinstall": null,
        "install": ["brew install docker docker-machine"],
        "update": ["brew update && brew upgrade docker docker-machine"],
        "uninstall": ["brew uninstall docker docker-machine"],
        "dependencies": ["homebrew"]
+   },
+   {
+       "name": "mariadb",
+       "preinstall": null,
+       "install": ["sudo nala install -y mariadb-server"],
+       "uninstall": [
+          "sudo nala purge -y mariadb-server",
+          "sudo nala autoremove -y && sudo nala clean",
+          "sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql"
+       ],
+       "dependencies": ["nala"]
     }
   ]
 }

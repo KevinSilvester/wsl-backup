@@ -163,8 +163,8 @@ if status is-interactive
    alias w-nvim-config='nvim $WIN_HOME/AppData/Local/nvim/init.vim'
    alias w-lvim-config='nvim $WIN_HOME/AppData/Local/lvim/config.lua'
    alias wezterm-config='nvim $WEZTERM_CONFIG/wezterm.lua'
-   alias bird-eggs='nvim $ROOT/bird-eggs.json'
-   alias bird-nest='nvim $ROOT/bird-nest.json'
+   alias bird-eggs='nvim $BIRD_EGGS'
+   alias bird-nest='nvim $BIRD_NEST'
 
    # exa
    # alias ls='LS_COLORS="$COL__" exa -F --no-user --group-directories-first --color=always --color-scale'
