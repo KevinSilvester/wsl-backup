@@ -1,0 +1,459 @@
+target\debug\rust-test.exe
+cargo --version
+scoop --version
+scoop update
+mkdir ~/.cache/starship
+cd ~\.cache\
+la
+ls
+cd starship\
+ls
+starship init nu | save ~/.cache/starship/init.nu
+ls
+bcat C:\Users\kevin\AppData\Roaming\nushell\config.nu
+bat C:\Users\kevin\AppData\Roaming\nushell\config.nu
+echo help
+echo "source ~/.cache/starship/init.nu" | save --raw --append source C:\Users\kevin\AppData\Roaming\nushell\config.nu 
+echo "source ~/.cache/starship/init.nu" | save --raw --append C:\Users\kevin\AppData\Roaming\nushell\config.nu 
+ls
+scoop search fish
+bcat .\session_4MnpQAhuEe8ascgl.log
+bat .\session_4MnpQAhuEe8ascgl.log
+wsl --help
+winget uninstall
+wsl --upgrade
+wsl --update
+wsl -s
+wsl -l
+wsl -d Ubuntu-22.04
+la
+ls -a
+wsl -l
+wsl -l -v
+wsl --help
+wsl --shutdown
+wsl -l -v
+wsl --shutdown
+wsl -l -v
+nu
+wsl --shutdown
+wsl -l -v
+wsl --update
+wsl
+wsl -l
+printenv
+which scoop
+scoop search qemu
+scoop install qemu
+scoop update --all
+scoop search qtemu
+scoop install qtemu
+scoop search haxm
+scoop search ha
+Get-ExecutionPolicy
+ls
+scoop search powertoys
+scoop install powertoys
+la
+ls
+la
+ls -l
+which reg
+which scoop
+which which
+which ls
+which lsd
+lsd
+lsd -a
+lsd -lA
+lsd -la
+which ls
+cd `C:\Users\kevin\Videos\tv\Obi-Wan Kenobi\season 1\`
+la
+wsl
+wsl --shutdown
+wsl -l -v
+cd
+cd rust\bird-current\
+la
+ls -l
+git log
+ls
+lsd
+lsd -l
+ls
+git log
+la
+ls -a
+lsd
+lsd -l
+lsd --help
+lsd --help | rg 'git'
+ls | table
+la
+ls
+ls -a
+(ls)
+(ls).name
+(ls).dir
+(ls).type
+lsd
+lsd | table
+table --help
+lsd | table
+lsd 
+lsd -la
+lsd -lA
+lsd -lA | table
+scoop list
+la
+which ls
+which exa
+which lsd
+la
+youbute-dl --help
+scoop list
+youtube-dl --help
+youtube-dl -h
+youtube-dl
+ytdl --hep
+which youtube-dl
+youtube-dl --version
+scoop uninstall youbute-dl
+scoop uninstall youtube-dl
+scoop install youbute-dl
+choco --help
+choco search youtube
+scoop search youtube
+scoop install youtube-dl
+la
+ls
+cd Music\
+la
+ls
+mkdir yt
+cd yt
+youtube-dl --extract-audio --audio-format mp3 'https://www.youtube.com/watch?v=S03T47hapAc'
+which youtube-dl
+youtube-dl --help
+which pi8p
+which pip
+scoop uninstall youtube-dl
+pip --help
+pip search youtube
+which python
+which install
+scoop install ffmpeg vcredist
+scoop install youtube-dl
+youtube-dl --help
+youtube-dl --extract-audio --audio-format mp3 'https://www.youtube.com/watch?v=S03T47hapAc'
+la
+ls
+echo $APPDATA
+echo $env
+echo $env:Appdata
+echo $env
+echo $env.AppData
+echo $env.APPDATA
+cd $env.APPDATA
+la
+ls
+mkdir youtube-dl
+cd youtube-dl\
+lvim config.txt
+ps-config
+printenv
+pwsh -c $env.LVIM
+pwsh -c "$env.LVIM"
+$env.LVIM
+echo $env
+pwhs
+printenv LVIM_PS1
+pwsh -c "C:\Users\kevin\.local\bin\lvim.ps1"
+la
+ls
+youtube-dl --audio-format mp3 'https://youtu.be/mNEUkkoUoIA'
+la
+ls
+rm %(ext)
+youtube-dl --extract-audio --audio-format mp3 'https://youtu.be/mNEUkkoUoIA'
+ls
+pip install -U compare-mp3
+let-env PATH = ($env.PATH | prepend 'C:\Users\kevin\scoop\apps\python\current\Scripts')
+let-env PATH = ($env.Path | prepend 'C:\Users\kevin\scoop\apps\python\current\Scripts')
+printenv
+compare-mp3 --help
+la
+ls
+compare-mp3 OneRepublic_-_I_Aint_Worried_From_(getmp3.pro).mp3 `OneRepublic - I Ain’t Worried (From “Top Gun - Maverick”) [Official Music Video].mp3`
+youtube-dl --extract-audio --audio-format aac 'https://youtu.be/mNEUkkoUoIA'
+youtube-dl --extract-audio --audio-format wav 'https://youtu.be/mNEUkkoUoIA'
+la
+ls
+rm One*
+ls
+cd
+youtube-dl --audio-format mp3 'https://youtu.be/mNEUkkoUoIA'
+env nu
+which env
+usr/bin/env
+la
+ls
+ls | type == 'dir'
+ls | type 
+ls.type
+ls | where type == 'dir'
+mkdir scripts
+which mkdir
+cd scripts\
+ls
+touch songs.nu
+lvim songs.nu
+conifg
+config
+config env
+config nu
+config env
+pwsh -c "C:\Users\kevin\.local\bin\lvim.ps1"
+bat --help
+bat --paging=never C:\Users\kevin\.local\bin\lvim.ps1
+which nvim
+which cat
+cat C:\Users\kevin\.local\bin\lvim.ps1
+config --help
+config env
+printenv
+la
+ls
+cd
+config nu
+lvim
+config nu
+ocnfig nu
+config nu
+ls --help
+ls -d
+cd
+ls -d
+ls
+ls --help
+ls -a
+ls
+config env
+config nu
+bcat ~\.cache\starship\init.nu
+bat --paging=never ~\.cache\starship\init.nu
+echo $width
+echo $env.windir
+echo $env.CMD_DURATION_MS
+cd
+cd scripts
+lvim songs.nu
+type lvim
+config nu
+config env
+let a = ['a', 'b', 'c']
+echo $a
+$a | insert 2 'g'
+echo $a
+insert --help
+let a = ($a | insert 2 'g')
+echo $a
+scoop search lolcat
+scoop install meow
+scoop install --help
+scoop install --no-update-scoop meow
+meow hello
+meow hello world
+meow 'hello world'
+$a | each { |i| meow $i }
+$a | each { |i| meow "$i" }
+$a | each { |i| meow "'$i'" }
+$a | each { |i| ehco "'$i'" }
+$a | each { |i| echo "'$i'" }
+$a | each { |i| cat "'$i'" }
+$a | each { |i| echo $i | cat }
+$a | each { |i| echo $i | cat | meow }
+$a | each { |i| echo $i | bcat | meow }
+$a | each { |i| echo $i | bat | meow }
+$a | each { |i| echo $i }
+ls
+which livm
+which lvim
+config nu
+cd $env.APPDATA
+ls
+cd discord\
+ls
+cd ../
+ls
+cd Surfshark\
+ls
+cd ../
+ls
+cd nushell\
+ls
+config nu
+nu-config
+reload
+nu-config
+:q
+which nu-config
+echo $env.APPDATA
+echo "$env.APPDATA\nushell\config.nu"
+echo "$env.APPDATA\\nushell\\config.nu"
+join --help
+string --help
+echo "$env.APPDATA\\nushell\\config.nu"
+echo $"$env.APPDATA\\nushell\\config.nu"
+echo "($env.APPDATA)\\nushell\\config.nu"
+echo $env.APPDATA"\\nushell\\config.nu"
+echo $env.APPDATA + "\\nushell\\config.nu"
+echo $env.APPDATA  "\\nushell\\config.nu"
+^ls
+ls
+which cat
+which which
+^which
+which cd
+which ^cd
+which echo
+echo hello
+^echo $env.APPDATA  "\\nushell\\config.nu"
+^echo $env.APPDATA "\\nushell\\config.nu"
+^echo "$env.APPDATA\\nushell\\config.nu"
+^echo $env.APPDATA"\\nushell\\config.nu"
+^echo $env.APPDATA + "\\nushell\\config.nu"
+^echo $env.APPDATA "\\nushell\\config.nu"
+which ^cat
+which ^echo
+^echo "($env.APPDATA)\\nushell\\config.nu"
+echo "($env.APPDATA)\\nushell\\config.nu"
+echo $"($env.APPDATA)\\nushell\\config.nu"
+cd
+ls
+cd $env.APPDATA
+ls
+cd nushell\
+ls
+pwd
+use C:\Users\kevin\AppData\Roaming\nushell\completions.nu 
+z bird
+cd ..\..\..\
+ls
+la
+ls -a
+cd projects\
+ls
+cd rust
+ls
+cd bird-current\
+git pull
+completions git push 
+cwd
+pwd
+choco search fish
+str --help
+which nu
+which ncdu
+cd C:\Users\kevin\scoop\shims
+ls
+cd C:\Users\kevin\scripts
+nu-config
+nvim
+$nu
+$nu.os-info
+$nu.scope
+$nu.scope.modules
+$nu
+$nu.scope.modules
+$nu.scope.
+$nu.scope.engine_state
+which elvish
+lvim config.nu
+ls
+mkdir completions
+rm completions.nu
+ls
+lvim config.nu
+history
+ls
+history
+nu --help
+nu -v
+ls
+git clone https://github.com/nushell/nu_scripts.git 
+cd nu_scripts\
+l
+ls
+cd fun
+ls
+nu spark.nu
+nu spark.nu spark
+source spark.nu
+ls
+source spark.nu spark
+source spark.nu
+spark
+build-completion
+cd ..\custom-completions\
+ls
+cp cargo\cargo-completions.nu ..\..\completions\
+cp git\git-completions.nu ..\..\completions\
+cp make\make-completions.nu ..\..\completions\
+cp npm\npm-completions.nu ..\..\completions
+cp scoop\scoop-completions.nu ..\..\completions\
+cp winget\winget-completions.nu ..\..\completions\
+cp yarn\yarn-completion.nu ..\..\completions\
+ls
+cd ../../
+ls
+cd completions\
+ls
+cd ../
+cd nu_scripts\
+cd weather\
+ls
+source get-weather.nu 
+use get-weather.nu 
+get-weekday 
+get-weather get_weather 
+weatherdark.nu
+source weatherdark.nu 
+use weatherdark.nu 
+get-weather get_weather -u c
+ls
+mkdir ../../utils
+cp get-weather.nu ..\..\utils\
+cd ../../
+ls
+mv nu_scripts\ .nu_scripts
+ls
+lvim config.nu
+$nu
+let $nu.hello = 'hello'
+$nu
+let nu.hello = 'hello'
+$nu
+let CONFIG_DIR = $"($env.APPDATA)\\nushell"
+echo $CONFIG_DIR
+echo $"($CONFIG_DIR)\\utils\\get-weather.nu"
+pwd
+cd utils\
+pwd
+ls
+cd ..
+cd C:\Users\kevin\AppData\Roaming\nushell\utils\
+l
+ls
+bat --paging=never get-weather.nu
+cd C:\Users\kevin\AppData\Roaming\nushell\utils\
+ls
+cd
+cd -
+nvim config.nu
+starship init nu | save ~/.cache/starship/init.nu
+ls
+$nu
+$nu.os-info
+fish

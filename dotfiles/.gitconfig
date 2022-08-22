@@ -3,9 +3,8 @@
 	name = Kevin Silvester
 	signingkey = 32AB85943DFA03E2
 [credential "https://github.com"]
-	helper = 
 	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
 [core]
-	editor = lvim
+	editor = nvim
 [commit]
 	gpgsign = true

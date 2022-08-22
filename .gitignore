@@ -1,9 +1,7 @@
-zsh/zsh*
-zsh/colorize
-zsh/dotenv
-zsh/extract
-zsh/k
 sqls/config.yml
 lvim/plugin
 .installer-hist
 bird-nest.json
+btop/btop.log
+configstore
+gh
