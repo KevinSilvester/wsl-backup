@@ -8,6 +8,52 @@
 
 ******************************************************************************************************************
 
+## Setup VcXSrv for use with WSL2
+This set up is to enable x11 forwarding without disabling access control
+
+**In WSL distro**
+1. Install xauth, md5sum and gawk or awk
+```bash
+sudo apt install -y xauth coreutils gawk gnome-terminal
+
+xauth list # this should be an empty list
+
+magiccookie=$(echo '{some-pass-phrase}'|tr -d '\n\r'|md5sum|gawk '{print $1}')
+
+rm ~/.Xauthority && touch ~/.Xauthority && xauth add host.docker.internal:0 . $magiccookie
+
+cp ~/.Xauthority /mnt/c/Users/{WindowsUserName}
+```
+
+2. Set the `DISPLAY` environment variable
+```bash
+export DISPLAY=host.docker.internal:0
+```
+
+**In Windows host**
+1. Install wget and vcxsrv using scoop
+```pwsh
+scoop install wget vcxsrv
+```
+
+2. Download the powershell script to create/update the inbound firelwall rules and to start the vcxsrv server
+```pwsh
+# create a folder in user home directory to house scripts
+if (-Not (Test-Path -Path "$env:HOMEPATH\scripts")) { mkdir "$env:HOMEPATH\scripts" }
+
+# Download the batch file
+wget -O "$env:HOMEPATH\scripts\wsl-x11.bat" "https://gist.githubusercontent.com/KevinSilvester/bf6596393dac89a15ab2b3e0fd40acc9/raw/66cc2e92312439a287677a881bf23291fc1e4746/wsl-x11.bat"
+
+# Download the powershell script
+wget -O "$env:HOMEPATH\scripts\wsl-x11.ps1" "https://gist.githubusercontent.com/KevinSilvester/2976fc9bcbb716b1731ebb26af403580/raw/e69464b8df58485594e61baa2524dcc6784856c0/wsl-x11.ps1"
+```
+
+3. Run the batch file start the set up
+```pwsh
+"$env:HOMEPATH\scripts\wsl-x11.bat"
+```
+******************************************************************************************************************
+
 ## **Essentials**
 #### **Sudo**
 ```zsh
