@@ -31,6 +31,19 @@ cp ~/.Xauthority /mnt/c/Users/{WindowsUserName}
 export DISPLAY=$(xauth list | awk '{print $1}')
 ```
 
+3. Update the following entries in the SSH config file
+```bash
+sudo vim /etc/ssh/sshd_config
+```
+
+```
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost yes
+XAuthLocation /usr/bin/X11/xauth
+```
+
+
 **In Windows host**
 1. Install wget and vcxsrv using scoop
 ```pwsh
