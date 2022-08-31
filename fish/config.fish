@@ -213,12 +213,20 @@ if status is-interactive
    alias mysql-start='sudo /etc/init.d/mysql start'
    alias mysql-stop='mysqladmin -p shutdown'
 
+   # Trash CLI
+   alias tp='trash-put'
+   alias te='trash-empty'
+   alias tl='trash-list'
+   alias tre='trash-restore'
+   alias trm='trash-rm'
+
    # bat
    alias bcat='bat --paging=never --color=always --style=numbers'
 
    # fzf
    alias fzf-bat='fzf --layout=reverse --height=85% --preview "bat --paging=never --style=numbers --color=always {}"'
    alias fzf-cd='cd (fd --type directory | fzf --layout=reverse --height=85%)'
+   alias fzf-nvim='fd --type f --hidden --exclude .git | fzf-tmux -p 30 --reverse | xargs nvim'
 
    # Windows programmes
    alias explore='explorer.exe'

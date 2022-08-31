@@ -1,0 +1,5 @@
+complete -c sd -n "__fish_use_subcommand" -s f -l flags -d 'Regex flags. May be combined (like `-f mc`).'
+complete -c sd -n "__fish_use_subcommand" -s p -l preview -d 'Output result into stdout and do not modify files'
+complete -c sd -n "__fish_use_subcommand" -s s -l string-mode -d 'Treat expressions as non-regex strings'
+complete -c sd -n "__fish_use_subcommand" -s h -l help -d 'Prints help information'
+complete -c sd -n "__fish_use_subcommand" -s V -l version -d 'Prints version information'

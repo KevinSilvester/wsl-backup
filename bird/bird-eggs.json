@@ -550,6 +550,22 @@
           "sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql"
        ],
        "dependencies": ["nala"]
-    }
+    },
+   {
+      "name": "pwsh",
+      "preinstall": [
+         "sudo nala install -y apt-transport-https software-properties-common",
+         "wget -q 'https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb' -O /tmp/packages-microsoft-prod.deb",
+         "sudo dpkg -i /tmp/packages-microsoft-prod.deb",
+         "sudo nala update"
+      ],
+      "install": ["sudo nala install -y powershell"],
+      "update": null,
+      "uninstall": [
+          "sudo nala purge -y powershell",
+          "sudo nala autoremove -y && sudo nala clean"
+       ],
+      "dependencies": ["nala"]
+   }
   ]
 }
