@@ -24,8 +24,8 @@ function _cmake_helper --description "Initialize a cmake project with some basic
    set -l config  .ch-config.yml
    set -l bin     $project
 
-   set -l GCC     (which gcc-11)
-   set -l GPP     (which g++-11)
+   set -l GCC     (which gcc-12)
+   set -l GPP     (which g++-12)
    set -l CMAKE   (which cmake)
    set -l MAKE    (which make)
    set -l gen     'CodeBlocks - Unix Makefiles'
@@ -72,11 +72,11 @@ function _cmake_helper --description "Initialize a cmake project with some basic
       set dir_rel (string replace '/mnt/c' 'C:' (pwd))
       set bin     $project.exe
 
-      set GCC     C:/msys64/mingw64/bin/gcc.exe
-      set GPP     C:/msys64/mingw64/bin/g++.exe
-      set CMAKE   '/mnt/c/Program Files/CMake/bin/cmake.exe'
+      set GCC     C:/Users/kevin/scoop/apps/msys2/current/mingw64/bin/gcc.exe
+      set GPP     C:/Users/kevin/scoop/apps/msys2/current/mingw64/bin/g++.exe 
+      set CMAKE   '/mnt/c/Users/kevin/scoop/shims/cmake.exe'
       set GEN     'CodeBlocks - MinGW Makefiles'
-      set MAKE    '/mnt/c/Users/kevin/scoop/apps/make/current/bin/make.exe'
+      set MAKE    '/mnt/c/Users/kevin/scoop/shims/make.exe'
    end
 
    getopts $argv | while read -l arg value
