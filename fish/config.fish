@@ -75,6 +75,7 @@ if status is-interactive
    fish_add_path -g  "$GOPATH/bin"
    fish_add_path -g  "/mnt/c/Program Files/Java/jdk-11.0.2/bin"
    fish_add_path -g  "$HOMEBREW_PREFIX/bin"
+   fish_add_path -g  "$HOMEBREW_PREFIX/sbin"
 
 # Rust
    set -gx RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"

@@ -1,5 +1,5 @@
 # Always extract audio
--extract-audio
+--extract-audio
 
 # Save directory
 -o /mnt/c/Users/kevin/Music/yt/%(title)s.%(ext)s
