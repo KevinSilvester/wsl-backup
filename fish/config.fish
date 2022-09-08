@@ -4,7 +4,7 @@ if status is-interactive
    set -gx ZSH                 "$HOME/.oh-my-zsh"
    set -gx ROOT                "$HOME/.config"
    set -gx C                   "/mnt/c"
-   set -gx WIN_HOME            "$C/Users/kevin"
+   set -gx WIN_HOME            "/mnt/c/Users/kevin"
    set -gx NVM_DIR             "$HOME/.nvm"
    set -gx STARSHIP_CONFIG     "$ROOT/starship/starship.toml"
    set -gx WT_CONFIG           "$WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
@@ -28,6 +28,7 @@ if status is-interactive
    # Go
    set -gx GOROOT "/usr/local/go"
    set -gx GOPATH "$HOME/.go"
+   set -gx GOBIN  "$GOPATH/bin"
 
    # Bird
    set -gx BIRD_EGGS "$ROOT/bird/bird-eggs.json"
@@ -76,6 +77,7 @@ if status is-interactive
    fish_add_path -g  "/mnt/c/Program Files/Java/jdk-11.0.2/bin"
    fish_add_path -g  "$HOMEBREW_PREFIX/bin"
    fish_add_path -g  "$HOMEBREW_PREFIX/sbin"
+   fish_add_path -g  "$WIN_HOME/scoop/apps/neovim/current/bin/"  # for win32yank
 
 # Rust
    set -gx RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"

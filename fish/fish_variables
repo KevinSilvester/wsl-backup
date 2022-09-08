@@ -13,8 +13,6 @@ SETUVAR --export --path FNM_MULTISHELL_PATH:/mnt/wslg/runtime\x2ddir/fnm_multish
 SETUVAR --export FNM_NODE_DIST_MIRROR:https\x3a//nodejs\x2eorg/dist
 SETUVAR --export FNM_VERSION_FILE_STRATEGY:local
 SETUVAR --export FZF_DEFAULT_OPS:\x2d\x2dextended
-SETUVAR --export GOBIN:/home/wsl1/go/bin
-SETUVAR --export --path GOPATH:/home/kevin/\x2ego
 SETUVAR --export GOROOT:/usr/local/go
 SETUVAR --export GO_DIR:/home/wsl1/\x2ego
 SETUVAR --export NVM_DIR:/home/kevin/\x2envm
