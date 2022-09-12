@@ -72,8 +72,8 @@ function _cmake_helper --description "Initialize a cmake project with some basic
       set dir_rel (string replace '/mnt/c' 'C:' (pwd))
       set bin     $project.exe
 
-      set GCC     C:/Users/kevin/scoop/apps/msys2/current/mingw64/bin/gcc.exe
-      set GPP     C:/Users/kevin/scoop/apps/msys2/current/mingw64/bin/g++.exe 
+      set GCC     C:/Users/kevin/scoop/apps/mingw/current/bin/gcc.exe
+      set GPP     C:/Users/kevin/scoop/apps/mingw/current/bin/g++.exe 
       set CMAKE   '/mnt/c/Users/kevin/scoop/shims/cmake.exe'
       set GEN     'CodeBlocks - MinGW Makefiles'
       set MAKE    '/mnt/c/Users/kevin/scoop/shims/make.exe'
