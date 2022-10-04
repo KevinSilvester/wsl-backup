@@ -522,6 +522,14 @@
          "dependencies": ["homebrew"]
       },
       {
+         "name": "pipes",
+         "preinstall": null,
+         "install": ["brew install pipes-sh"],
+         "update": ["brew update && brew upgrade pipes-sh"],
+         "uninstall": ["brew uninstall docker docker-machine"],
+         "dependencies": ["homebrew"]
+      },
+      {
          "name": "mariadb",
          "preinstall": null,
          "install": ["sudo nala install -y mariadb-server"],
@@ -552,6 +560,17 @@
          "update": ["curl https://pastebin.com/raw/BQMm4y9r | fish"],
          "uninstall": null,
          "dependencies": ["fish", "jq", "sd"]
+      },
+      {
+         "name": "cz",
+         "preinstall": null,
+         "install": [
+            "pnpm add -g commitizen cz-conventional-changelog",
+            "echo '{ \"path\": \"cz-conventional-changelog\" }' > ~/.czrc"
+         ],
+         "update": ["pnpm add -g commitizen cz-conventional-changelog"],
+         "uninstall": ["pnpm remove -g commitizen cz-conventional-changelog"],
+         "dependencies": ["pnpm"]
       }
    ]
 }
