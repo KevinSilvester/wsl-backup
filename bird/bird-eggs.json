@@ -174,8 +174,12 @@
       {
          "name": "nvim",
          "preinstall": null,
-         "install": ["brew install neovim"],
-         "update": ["brew update && brew upgrade neovim"],
+         "install": [
+            "rm -rf /tmp/neovim.rb",
+            "wget https://raw.githubusercontent.com/Homebrew/homebrew-core/6144bfc37075ca55be59cbabfd4f9af1d865e3a2/Formula/neovim.rb -O /tmp/neovim.rb",
+            "brew install /tmp/neovim.rb"
+         ],
+         "update": null,
          "uninstall": ["brew uninstall neovim"],
          "dependencies": ["homebrew"]
       },

@@ -12,12 +12,16 @@ sudo systemctl stop mysql
 # or stop without init system
 sudo /etc/init.d/mysql stop
 
+# On Linux
 # if that doesn't work manually kill all running processes
 ps -aux | awk '$1 == "mysql" {print $2}' | xargs -I % sudo kill -9 %
+
+# On Windows
+# open TaskManager and any processes names 'mysql' or 'mysqld'
 ```
 
 2. Purge all of the MySQL packages
-
+**On Ubuntu:**
 ```fish
 sudo apt purge -y mysql-server
 sudo apt autoremove -y
