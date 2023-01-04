@@ -12,7 +12,7 @@ if status is-interactive
    set -gx WEZTERM_CONFIG     "$WIN_HOME/.config/wezterm"
 
    set -gx TERM               "xterm-256color"
-   set -gx BAT_THEME          "gruvbox-dark"
+   set -gx BAT_THEME          "Catppuccin-mocha"
    set -gx FZF_DEFAULT_OPTS   "--extended \
                                  --layout=reverse \
                                  --height=85% \
@@ -47,6 +47,10 @@ if status is-interactive
 
    # pnpm
    set -gx PNPM_HOME "/home/kevin/.local/share/pnpm"
+
+   # OpenAI API key
+   set -gx OPENAI_API_KEY (cat ~/.openai-api-key 2>/dev/null)
+   
 
    # to run any graphical application via the terminal
    set -gx DISPLAY  (ip route list default | awk '{print $3}'):0
