@@ -1,4 +1,4 @@
-format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$php$cmake$package
+format = '''[◆](bold #a8f7d1) [$directory](bold #bf8fff)$git_branch [◆](bold #a8f7d1)$cmd_duration$git_status$nodejs$java$php$cmake$package$python
 $character'''
 
 right_format = '''$time'''
@@ -55,8 +55,16 @@ format = " [${symbol}(${version})](bold #828bb7)"
 format = " [$symbol($version )]($style)"
 
 [package]
-format = " [$symbol$version]($style)"
+format = " [$symbol($version )]($style)"
 symbol = " "
+
+[python]
+format = " [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)"
+python_binary = ["python3"]
+symbol = " "
+
+[conda]
+format = " [$symbol$environment]($style)"
 
 [memory_usage]
 format = ' $symbol [${ram}( \| ${swap})]($style)'
